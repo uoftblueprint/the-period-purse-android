@@ -33,15 +33,12 @@ import com.tpp.theperiodpurse.utility.validateUserAuthenticationAndAuthorization
 /**
  * Displays the backup account screen.
  *
- * @param appbar The appbar component.
  * @param navController The navigation controller.
  * @param signIn The callback function for signing in.
- * @param onboardUIState The state of the onboarding UI.
  * @param context The Android context.
  */
 @Composable
 fun BackUpAccountScreen(
-    appbar: Unit,
     navController: NavHostController = rememberNavController(),
     appViewModel: AppViewModel,
     signIn: (launcher: ActivityResultLauncher<Intent>) -> Unit,
@@ -54,7 +51,6 @@ fun BackUpAccountScreen(
     val account = GoogleSignIn.getLastSignedInAccount(context)
     val authorized = validateUserAuthenticationAndAuthorization(account)
     Log.d("Backup account", "Re-rendering")
-    appbar
 
     if (account == null) {
         SignInView(screenheight, signIn, appViewModel, context, signOut, navController)

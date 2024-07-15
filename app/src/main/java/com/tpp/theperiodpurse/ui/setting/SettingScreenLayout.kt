@@ -27,12 +27,14 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.unit.Density
 import androidx.compose.ui.unit.dp
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
 import com.tpp.theperiodpurse.R
 import com.tpp.theperiodpurse.data.model.Symptom
+import com.tpp.theperiodpurse.ui.component.Background
 import com.tpp.theperiodpurse.ui.component.SocialMedia
 import com.tpp.theperiodpurse.ui.legal.TermsAndPrivacyFooter
 import com.tpp.theperiodpurse.ui.onboarding.scaledSp
@@ -97,7 +99,7 @@ fun SettingScreenLayout(
         modifier = modifier
             .fillMaxSize()
             .padding(10.dp)
-            .verticalScroll(rememberScrollState()),
+            .verticalScroll(rememberScrollState())
     ) {
         Text(
             text = stringResource(R.string.tracking_preferences),
@@ -148,8 +150,8 @@ fun SettingScreenLayout(
 
         Divider(
             modifier = Modifier
-            .padding(start = 10.dp, end = 10.dp)
-            .background(color = appViewModel.colorPalette.lineColor))
+                .padding(start = 10.dp, end = 10.dp)
+                .background(color = appViewModel.colorPalette.lineColor))
 
         NavigateButton(
             stringResource(id = R.string.customize_notifications),

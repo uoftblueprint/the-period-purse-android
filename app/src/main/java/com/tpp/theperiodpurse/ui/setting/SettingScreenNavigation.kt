@@ -8,18 +8,20 @@ import android.os.Build
 import androidx.activity.result.ActivityResultLauncher
 import androidx.annotation.RequiresApi
 import androidx.annotation.StringRes
-import androidx.compose.foundation.Image
-import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.WindowInsets
+import androidx.compose.foundation.layout.navigationBars
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.safeDrawingPadding
+import androidx.compose.foundation.layout.windowInsetsPadding
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.unit.Density
 import androidx.compose.ui.unit.dp
 import androidx.core.content.ContextCompat
 import androidx.navigation.NavHostController
@@ -28,6 +30,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.tpp.theperiodpurse.R
+import com.tpp.theperiodpurse.ui.component.Background
 import com.tpp.theperiodpurse.ui.state.AppUiState
 import com.tpp.theperiodpurse.ui.state.CalendarUIState
 import com.tpp.theperiodpurse.ui.state.OnboardUIState
@@ -57,7 +60,6 @@ fun SettingAppBar(
 ) {
     TopAppBar(
         title = { Text(text = currentScreen, color = appViewModel.colorPalette.MainFontColor) },
-        modifier = modifier.padding(0.dp),
         navigationIcon = {
             if (canNavigateBack) {
                 IconButton(onClick = navigateUp) {
@@ -94,42 +96,36 @@ fun SettingsScreen(
         backStackEntry?.destination?.route ?: SettingScreenNavigation.Start.name,
     )
 
-    Scaffold() { innerPadding ->
-        if (appViewModel != null) {
-            Image(
-                painter = painterResource(id = appViewModel.colorPalette.background),
-                contentDescription = null,
-                modifier = Modifier.fillMaxSize(),
-                contentScale = ContentScale.FillBounds,
-            )
-        }
-
+    Scaffold(
+    ) { innerPadding ->
         NavHost(
             navController = navController,
             startDestination = SettingScreenNavigation.Start.name,
-            modifier = modifier.padding(innerPadding),
+            modifier = modifier.padding(innerPadding)
         ) {
             composable(route = SettingScreenNavigation.Start.name) {
                 if (appViewModel != null) {
-                    SettingScreenLayout(
-                        outController = outController,
-                        onNotificationClicked = {
-                            navController.navigate(SettingScreenNavigation.Notification.name)
-                        },
-                        onBackUpClicked = {
-                            navController.navigate(SettingScreenNavigation.BackUpAccount.name)
-                        },
-                        onDeleteClicked = {
-                            navController.navigate(SettingScreenNavigation.DeleteAccount.name)
-                        },
-                        appViewModel = appViewModel,
-                        context = context,
-                        navController = navController
-                    )
+                    Box(modifier = Modifier.windowInsetsPadding(WindowInsets.navigationBars)) {
+                        Background()
+                        SettingScreenLayout(
+                            outController = outController,
+                            onNotificationClicked = {
+                                navController.navigate(SettingScreenNavigation.Notification.name)
+                            },
+                            onBackUpClicked = {
+                                navController.navigate(SettingScreenNavigation.BackUpAccount.name)
+                            },
+                            onDeleteClicked = {
+                                navController.navigate(SettingScreenNavigation.DeleteAccount.name)
+                            },
+                            appViewModel = appViewModel,
+                            context = context,
+                            navController = navController
+                        )
+                    }
                 }
             }
             composable(route = SettingScreenNavigation.Notification.name) {
-//                TimeWheel(context= LocalContext.current)
                 val hasNotificationPermission by remember {
                     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
                         mutableStateOf(
@@ -142,54 +138,58 @@ fun SettingsScreen(
                         mutableStateOf(true)
                     }
                 }
-//                var allowReminders = false
-//                if (appViewModel != null){
-//                    allowReminders = appViewModel.getAllowReminders()
-//                }
                 if (appViewModel != null) {
-                    NotificationsLayout(
-                        context = context,
-                        hasNotificationPermission,
-                        appBar = SettingAppBar(
+                    Box(modifier = Modifier.safeDrawingPadding()) {
+                        Background()
+                        SettingAppBar(
                             currentScreen = currentScreen.name,
                             canNavigateBack = navController.previousBackStackEntry != null,
                             navigateUp = { navController.navigateUp() },
                             appViewModel = appViewModel
-                        ),
-                        appViewModel,
-                    )
+                        )
+                        NotificationsLayout(
+                            context = context,
+                            hasNotificationPermission,
+                            appViewModel,
+                        )
+                    }
                 }
             }
             composable(route = SettingScreenNavigation.BackUpAccount.name) {
                 if (appViewModel != null) {
-                    BackUpAccountScreen(
-                        appbar = SettingAppBar(
+                    Box(modifier = Modifier.safeDrawingPadding()) {
+                        Background()
+                        SettingAppBar(
                             currentScreen = "Back Up Account",
                             canNavigateBack = navController.previousBackStackEntry != null,
                             navigateUp = { navController.navigateUp() },
                             appViewModel = appViewModel
-                        ),
-                        navController = navController,
-                        signIn = { signInLauncher -> signIn(signInLauncher) },
-                        signOut = signout,
-                        context = context,
-                        appViewModel = appViewModel
-                    )
+                        )
+                        BackUpAccountScreen(
+                            navController = navController,
+                            signIn = { signInLauncher -> signIn(signInLauncher) },
+                            signOut = signout,
+                            context = context,
+                            appViewModel = appViewModel
+                        )
+                    }
                 }
             }
             composable(route = SettingScreenNavigation.DeleteAccount.name) {
-                val context = LocalContext.current
                 if (appViewModel != null) {
-                    DeleteAccountScreen(
-                        appBar = SettingAppBar(
+                    Box(modifier = Modifier.safeDrawingPadding()) {
+                        Background()
+                        SettingAppBar(
                             currentScreen = "Delete Account",
                             canNavigateBack = navController.previousBackStackEntry != null,
                             navigateUp = { navController.navigateUp() },
                             appViewModel = appViewModel
-                        ),
-                        navController = navController,
-                        appViewModel = appViewModel
-                    )
+                        )
+                        DeleteAccountScreen(
+                            navController = navController,
+                            appViewModel = appViewModel
+                        )
+                    }
                 }
             }
             composable(route = SettingScreenNavigation.ResetDatabase.name) {

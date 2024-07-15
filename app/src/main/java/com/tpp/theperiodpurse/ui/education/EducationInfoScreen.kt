@@ -38,12 +38,12 @@ fun EducationInfoScreen(
             product = it
         }
     }
-    EducationBackground(appViewModel = appViewModel)
     Column(
         modifier = Modifier
             .fillMaxSize()
             .verticalScroll(rememberScrollState())
-            .padding(24.dp),
+            .padding(24.dp)
+            .safeDrawingPadding(),
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
         Icon(

@@ -70,7 +70,7 @@ fun DateRangePicker(
         }
     }
     Box(
-        modifier = Modifier.background(Color.White),
+        modifier = Modifier.background(Color.White).safeDrawingPadding(),
     ) {
         Column(modifier = Modifier.fillMaxSize(), verticalArrangement = Arrangement.Top) {
             // Add a row with "Save" and dismiss actions.

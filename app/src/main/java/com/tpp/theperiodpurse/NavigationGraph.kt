@@ -157,7 +157,7 @@ fun NavigationGraph(
         // Education Screens
 
         composable(route = Screen.Learn.name) {
-            EducationScreen(outController = navController, appViewModel = appViewModel)
+            EducationScreen(outController = navController, appViewModel = appViewModel, context=context)
         }
 
         composable(LegalScreen.Terms.name) {

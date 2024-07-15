@@ -23,6 +23,7 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.tpp.theperiodpurse.R
+import com.tpp.theperiodpurse.ui.component.Background
 import com.tpp.theperiodpurse.ui.component.SocialMedia
 import com.tpp.theperiodpurse.ui.datasource.Product
 import com.tpp.theperiodpurse.ui.datasource.ProductsList
@@ -45,7 +46,6 @@ fun EducationScreenLayout(
     navController: NavHostController,
 ) {
     val uriHandler = LocalUriHandler.current
-    EducationBackground(appViewModel = appViewModel)
     EducationScreenContent(navController, uriHandler, outController, appViewModel)
 }
 
@@ -59,7 +59,9 @@ fun EducationScreenContent(
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .padding(bottom = 50.dp),
+            .padding(bottom = 50.dp)
+            .safeDrawingPadding()
+        ,
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
         LazyVerticalGrid(
@@ -231,7 +233,9 @@ fun TPPCard(uriHandler: UriHandler, appViewModel: AppViewModel) {
         backgroundColor = Color.White,
     ) {
         Column(
-            modifier = Modifier.background(color= appViewModel.colorPalette.HeaderColor1).wrapContentSize(Alignment.Center),
+            modifier = Modifier
+                .background(color = appViewModel.colorPalette.HeaderColor1)
+                .wrapContentSize(Alignment.Center),
         ) {
             Text(
                 modifier = Modifier

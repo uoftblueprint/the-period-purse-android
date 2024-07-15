@@ -32,11 +32,11 @@ fun EducationDYKScreen(navController: NavHostController, appViewModel: AppViewMo
     val context = LocalContext.current
     setFact(context)
 
-    EducationBackground(appViewModel = appViewModel)
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .padding(24.dp),
+            .padding(24.dp)
+            .safeDrawingPadding(),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center,
     ) {

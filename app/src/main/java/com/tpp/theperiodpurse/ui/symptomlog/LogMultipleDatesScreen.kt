@@ -3,6 +3,7 @@ package com.tpp.theperiodpurse.ui.symptomlog
 import android.os.Build
 import androidx.annotation.RequiresApi
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.FloatingActionButton
 import androidx.compose.material.Icon
@@ -31,6 +32,7 @@ import com.tpp.theperiodpurse.data.entity.Date
 import com.tpp.theperiodpurse.data.model.FlowSeverity
 import com.tpp.theperiodpurse.ui.calendar.components.Day
 import com.tpp.theperiodpurse.ui.calendar.components.MonthHeader
+import com.tpp.theperiodpurse.ui.component.Background
 import com.tpp.theperiodpurse.ui.component.PopupTopBar
 import com.tpp.theperiodpurse.ui.onboarding.scaledSp
 import com.tpp.theperiodpurse.ui.state.CalendarDayUIState
@@ -51,112 +53,107 @@ fun LogMultipleDatesScreen(
     appViewModel: AppViewModel,
 ) {
     val context = LocalContext.current.applicationContext
-    Image(
-        painter = painterResource(appViewModel.colorPalette.background),
-        contentDescription = null,
-        modifier = Modifier
-            .fillMaxSize()
-            .semantics { contentDescription = "Cycle Page" },
-        contentScale = ContentScale.FillBounds,
-    )
-    Column(
-        modifier = Modifier
-            .fillMaxSize(),
-    ) {
-        PopupTopBar(onClose = onClose, appViewModel = appViewModel) {
-            LogMultipleDatesText(appViewModel)
-        }
-        val currentMonth = remember { YearMonth.now() }
-        val startMonth = remember { currentMonth.minusMonths(12) } // Previous months
-        val endMonth = remember { currentMonth.plusMonths(0) } // Next months
-        val firstDayOfWeek = remember { firstDayOfWeekFromLocale() } // Available from the library
+    Box(modifier = Modifier.windowInsetsPadding(WindowInsets.statusBars)) {
+        Background()
+        Column(
+            modifier = Modifier
+                .fillMaxSize()
+        ) {
+            PopupTopBar(onClose = onClose, appViewModel = appViewModel) {
+                LogMultipleDatesText(appViewModel)
+            }
+            val currentMonth = remember { YearMonth.now() }
+            val startMonth = remember { currentMonth.minusMonths(12) } // Previous months
+            val endMonth = remember { currentMonth.plusMonths(0) } // Next months
+            val firstDayOfWeek = remember { firstDayOfWeekFromLocale() } // Available from the library
 
-        val state = rememberCalendarState(
-            startMonth = startMonth,
-            endMonth = endMonth,
-            firstVisibleMonth = currentMonth,
-            firstDayOfWeek = firstDayOfWeek,
-        )
-
-        val calendarDayUIStates = calendarViewModel.uiState.collectAsState().value.days
-
-        val selectedDates = mutableSetOf<LocalDate>()
-        val unselectedDates = mutableSetOf<LocalDate>()
-
-        Box {
-            VerticalCalendar(
-                modifier = Modifier
-                    .padding(horizontal = 12.dp)
-                    .semantics { contentDescription = "Calendar" },
-                contentPadding = PaddingValues(bottom = 48.dp),
-                state = state,
-                monthHeader = { month ->
-                    MonthHeader(month, appViewModel)
-                },
-                dayContent = { day ->
-                    if (day.position == DayPosition.MonthDate) {
-                        val initSelected = calendarDayUIStates[day.date]?.flow != null &&
-                                calendarDayUIStates[day.date]?.flow != FlowSeverity.Predicted
-                        var selected by remember { mutableStateOf(initSelected) }
-//                        val (dayColor, _) = getDayColorAndIcon(Symptom.FLOW, calendarDayUIStates[day.date])
-                        Day(
-                            day.date,
-                            color = if (selected) Red else appViewModel.colorPalette.CalendarDayColor,
-                            iconId = null,
-                            onClick = {
-                                selected = !selected
-                                if (selected) {
-                                    selectedDates.add(day.date)
-                                    unselectedDates.remove(day.date)
-                                } else {
-                                    selectedDates.remove(day.date)
-                                    unselectedDates.add(day.date)
-                                }
-                            },
-                        )
-                    }
-                },
+            val state = rememberCalendarState(
+                startMonth = startMonth,
+                endMonth = endMonth,
+                firstVisibleMonth = currentMonth,
+                firstDayOfWeek = firstDayOfWeek,
             )
 
-            FloatingActionButton(
-                onClick = {
-                    selectedDates.forEach {
-                        appViewModel.saveDate(
-                            Date(
-                                date = from(it.atStartOfDay(ZoneId.systemDefault()).toInstant()),
-                                flow = FlowSeverity.Medium,
-                                exerciseType = null,
-                                exerciseLength = null,
-                                crampSeverity = null,
-                                sleep = null,
-                                mood = null,
-                                notes = "",
-                            ),
-                            context,
-                        )
-                        calendarViewModel.updateDayInfo(it, CalendarDayUIState(flow = FlowSeverity.Medium))
-                    }
-                    val converted = unselectedDates.toList().map {
-                        from(it.atStartOfDay(ZoneId.systemDefault()).toInstant())
-                    }
-                    unselectedDates.forEach {
-                        calendarViewModel.clearFlow(it)
-                    }
-                    if (converted.isNotEmpty()) {
-                        appViewModel.deleteManyDates(converted, context)
-                    }
-                    onClose()
-                },
-                backgroundColor = SelectedColor1,
-                modifier = Modifier
-                    .padding(end = 16.dp, bottom = 16.dp)
-                    .align(Alignment.BottomEnd),
-            ) {
-                Icon(
-                    Icons.Rounded.Check,
-                    contentDescription = "Save",
-                    tint = Color.White,
+            val calendarDayUIStates = calendarViewModel.uiState.collectAsState().value.days
+
+            val selectedDates = mutableSetOf<LocalDate>()
+            val unselectedDates = mutableSetOf<LocalDate>()
+
+            Box {
+                VerticalCalendar(
+                    modifier = Modifier
+                        .padding(horizontal = 12.dp)
+                        .semantics { contentDescription = "Calendar" },
+                    contentPadding = PaddingValues(bottom = 48.dp),
+                    state = state,
+                    monthHeader = { month ->
+                        MonthHeader(month, appViewModel)
+                    },
+                    dayContent = { day ->
+                        if (day.position == DayPosition.MonthDate) {
+                            val initSelected = calendarDayUIStates[day.date]?.flow != null &&
+                                    calendarDayUIStates[day.date]?.flow != FlowSeverity.Predicted
+                            var selected by remember { mutableStateOf(initSelected) }
+//                        val (dayColor, _) = getDayColorAndIcon(Symptom.FLOW, calendarDayUIStates[day.date])
+                            Day(
+                                day.date,
+                                color = if (selected) Red else appViewModel.colorPalette.CalendarDayColor,
+                                iconId = null,
+                                onClick = {
+                                    selected = !selected
+                                    if (selected) {
+                                        selectedDates.add(day.date)
+                                        unselectedDates.remove(day.date)
+                                    } else {
+                                        selectedDates.remove(day.date)
+                                        unselectedDates.add(day.date)
+                                    }
+                                },
+                            )
+                        }
+                    },
                 )
+
+                FloatingActionButton(
+                    onClick = {
+                        selectedDates.forEach {
+                            appViewModel.saveDate(
+                                Date(
+                                    date = from(it.atStartOfDay(ZoneId.systemDefault()).toInstant()),
+                                    flow = FlowSeverity.Medium,
+                                    exerciseType = null,
+                                    exerciseLength = null,
+                                    crampSeverity = null,
+                                    sleep = null,
+                                    mood = null,
+                                    notes = "",
+                                ),
+                                context,
+                            )
+                            calendarViewModel.updateDayInfo(it, CalendarDayUIState(flow = FlowSeverity.Medium))
+                        }
+                        val converted = unselectedDates.toList().map {
+                            from(it.atStartOfDay(ZoneId.systemDefault()).toInstant())
+                        }
+                        unselectedDates.forEach {
+                            calendarViewModel.clearFlow(it)
+                        }
+                        if (converted.isNotEmpty()) {
+                            appViewModel.deleteManyDates(converted, context)
+                        }
+                        onClose()
+                    },
+                    backgroundColor = SelectedColor1,
+                    modifier = Modifier
+                        .padding(end = 16.dp, bottom = 16.dp)
+                        .align(Alignment.BottomEnd),
+                ) {
+                    Icon(
+                        Icons.Rounded.Check,
+                        contentDescription = "Save",
+                        tint = Color.White,
+                    )
+                }
             }
         }
     }

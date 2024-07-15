@@ -22,13 +22,11 @@ import com.tpp.theperiodpurse.ui.viewmodel.AppViewModel
 /**
  * A composable function for the delete account screen.
  *
- * @param appBar The app bar composable to be displayed.
  * @param navController The NavHostController instance for navigation.
  */
 @RequiresApi(Build.VERSION_CODES.O)
 @Composable
 fun DeleteAccountScreen(
-    appBar: Unit,
     navController: NavHostController = rememberNavController(),
     appViewModel: AppViewModel
 ) {
@@ -36,9 +34,6 @@ fun DeleteAccountScreen(
     val screenHeight = configuration.screenHeightDp
 
     var confirmDelete = remember { mutableStateOf(false) }
-
-    // Display the app bar
-    appBar
 
     Box(
         modifier = Modifier

@@ -46,9 +46,14 @@ fun PeriodHistoryLayout(
     var yearSelected by remember { mutableStateOf(years.keys.last()) }
     val cyclePage = stringResource(R.string.cycle_page)
     // Iterate over years and create horizontally scrollable buttons
-    Scaffold(topBar = { AppBar(navController = navController, appViewModel = appViewModel) }) {
+    Scaffold(
+        topBar = {
+            AppBar(navController = navController, appViewModel = appViewModel)
+        },
+        modifier = Modifier.safeDrawingPadding()
+    ) {
         Box(
-            modifier = Modifier.padding(it),
+            modifier = Modifier.padding(it)
         ) {
             Image(
                 painter = bg,

@@ -39,6 +39,7 @@ import com.google.android.gms.common.api.ApiException
 import com.google.android.gms.tasks.Task
 import com.tpp.theperiodpurse.OnboardingScreen
 import com.tpp.theperiodpurse.R
+import com.tpp.theperiodpurse.ui.component.Background
 import com.tpp.theperiodpurse.ui.component.handleError
 import com.tpp.theperiodpurse.ui.legal.TermsAndPrivacyFooter
 import com.tpp.theperiodpurse.ui.state.OnboardUIState
@@ -89,20 +90,15 @@ fun WelcomeScreen(
             }
         }
     } else {
-        Image(
-            painter = painterResource(id = appViewModel.colorPalette.background),
-            contentDescription = null,
-            modifier = Modifier.fillMaxSize(),
-            contentScale = ContentScale.FillBounds,
-        )
+        Background()
         Column(
             modifier = Modifier
-                .padding((screenheight * 0.03).dp)
-                .fillMaxWidth(),
+                .fillMaxWidth()
+                .safeDrawingPadding(),
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.spacedBy(8.dp),
         ) {
-            Spacer(modifier = Modifier.height((screenheight * 0.05).dp))
+            Spacer(modifier = Modifier.height((screenheight * 0.1).dp))
             // Logo Image
             Image(
                 painter = painterResource(R.drawable.app_logo),

@@ -27,6 +27,7 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import com.tpp.theperiodpurse.OnboardingScreen
 import com.tpp.theperiodpurse.R
+import com.tpp.theperiodpurse.ui.component.Background
 import com.tpp.theperiodpurse.ui.state.OnboardUIState
 import com.tpp.theperiodpurse.ui.theme.ButtonDisabledColor
 import com.tpp.theperiodpurse.ui.theme.Teal
@@ -52,15 +53,21 @@ fun QuestionThreeScreen(
     val configuration = LocalConfiguration.current
     val screenwidth = configuration.screenWidthDp
     val screenheight = configuration.screenHeightDp
+    Background()
     Box(
         Modifier
             .fillMaxHeight()
-            .fillMaxWidth(),
+            .fillMaxWidth()
+            .safeDrawingPadding()
     ) {
         val ratio = 0.45
         val ratioimage = 0.17
         val height = (screenheight * ratio)
         val imageheight = (screenheight * ratioimage)
+        Backbutton({
+            navController.navigateUp()
+            onSelectionChanged(selectedValue)
+        }, canNavigateBack)
         Box(
             modifier = Modifier
                 .width(screenwidth.dp)
@@ -368,8 +375,4 @@ fun QuestionThreeScreen(
             }
         }
     }
-    backbutton({
-        navController.navigateUp()
-        onSelectionChanged(selectedValue)
-    }, canNavigateBack)
 }

@@ -11,8 +11,10 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
 import androidx.activity.ComponentActivity
+import androidx.activity.SystemBarStyle
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.compose.setContent
+import androidx.activity.enableEdgeToEdge
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.annotation.RequiresApi
@@ -23,6 +25,8 @@ import androidx.compose.runtime.*
 import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
@@ -56,6 +60,16 @@ class MainActivity : ComponentActivity() {
     @RequiresApi(Build.VERSION_CODES.TIRAMISU)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        enableEdgeToEdge(
+            statusBarStyle = SystemBarStyle.auto(
+                Color.Black.toArgb(),
+                Color.Black.toArgb()
+            ),
+            navigationBarStyle = SystemBarStyle.auto(
+                Color.Black.toArgb(),
+                Color.Black.toArgb()
+            )
+        )
 
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
             .requestEmail()
@@ -160,7 +174,9 @@ fun AppScreen(
     signIn: (launcher: ActivityResultLauncher<Intent>) -> Unit,
     hasNotificationsPermissions: Boolean = false,
 ) {
-    ThePeriodPurseTheme(appViewModel) {
+    ThePeriodPurseTheme(
+        appViewModel,
+    ) {
         var loggingOptionsVisible by remember { mutableStateOf(false) }
         var skipOnboarding = skipOnboarding
         val isOnboarded by onboardViewModel.isOnboarded.observeAsState(initial = null)
@@ -197,20 +213,16 @@ fun AppScreen(
                 floatingActionButtonPosition = FabPosition.Center,
                 isFloatingActionButtonDocked = true,
             ) { innerPadding ->
-                Image(
-                    painter = painterResource(id = appViewModel.colorPalette.background),
-                    contentDescription = null,
-                    modifier = Modifier.fillMaxSize(),
-                    contentScale = ContentScale.FillBounds,
-                )
-                Box {
+                Box (
+                    modifier = Modifier
+                        .padding(innerPadding)
+                ){
                     NavigationGraph(
                         navController = navController,
                         startDestination = startdestination,
                         onboardViewModel = onboardViewModel,
                         appViewModel = appViewModel,
                         calendarViewModel = calendarViewModel,
-                        modifier = modifier.padding(innerPadding),
                         context = context,
                         signout = signout,
                         signIn = { signInLauncher -> signIn(signInLauncher) }
@@ -234,7 +246,7 @@ fun AppScreen(
                 }
                 Box(
                     contentAlignment = Alignment.BottomCenter,
-                    modifier = Modifier.fillMaxSize(),
+                    modifier = Modifier.fillMaxSize()
                 ) {
                     if (currentRoute(navController) in screensWithNavigationBar) {
                         BottomNavigation(navController = navController, appViewModel = appViewModel)

@@ -32,9 +32,6 @@ fun ThePeriodPurseTheme(
     val colors = LightColorPalette
 
     val systemUiController = rememberSystemUiController()
-    systemUiController.setStatusBarColor(
-        color = Color.Black,
-    )
     val darkMode = appViewModel.uiState.collectAsState().value.darkMode
     LaunchedEffect(darkMode) {
         if (darkMode) {

@@ -46,7 +46,10 @@ fun CalendarScreen(
         CalendarTabItem.CycleTab,
     )
     val pagerState = rememberPagerState()
-    Scaffold(topBar = {}) { padding ->
+    Scaffold(
+        topBar = {},
+        modifier = Modifier.safeDrawingPadding()
+    ) { padding ->
         Column(
             verticalArrangement = Arrangement.Bottom,
             modifier = Modifier.padding(padding),

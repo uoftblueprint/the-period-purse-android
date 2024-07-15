@@ -28,6 +28,7 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import com.tpp.theperiodpurse.OnboardingScreen
 import com.tpp.theperiodpurse.R
+import com.tpp.theperiodpurse.ui.component.Background
 import com.tpp.theperiodpurse.ui.state.OnboardUIState
 import com.tpp.theperiodpurse.ui.theme.ButtonDisabledColor
 import com.tpp.theperiodpurse.ui.theme.Teal
@@ -53,12 +54,14 @@ fun QuestionTwoScreen(
     val configuration = LocalConfiguration.current
     val screenwidth = configuration.screenWidthDp
     val screenheight = configuration.screenHeightDp
-    backbutton(navigateUp, canNavigateBack)
+    Background()
     Box(
         modifier = Modifier
             .fillMaxHeight()
-            .fillMaxWidth(),
+            .fillMaxWidth()
+            .safeDrawingPadding()
     ) {
+        Backbutton(navigateUp, canNavigateBack)
         Column(
             verticalArrangement = Arrangement.spacedBy(8.dp),
             horizontalAlignment = Alignment.CenterHorizontally,

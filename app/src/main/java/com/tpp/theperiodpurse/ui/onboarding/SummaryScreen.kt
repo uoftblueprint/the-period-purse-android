@@ -22,6 +22,7 @@ import com.tpp.theperiodpurse.data.*
 import com.tpp.theperiodpurse.data.entity.Date
 import com.tpp.theperiodpurse.data.model.FlowSeverity
 import com.tpp.theperiodpurse.data.model.Symptom
+import com.tpp.theperiodpurse.ui.component.Background
 import com.tpp.theperiodpurse.ui.state.CalendarDayUIState
 import com.tpp.theperiodpurse.ui.state.OnboardUIState
 import com.tpp.theperiodpurse.ui.viewmodel.AppViewModel
@@ -56,10 +57,12 @@ fun SummaryScreen(
     )
     val configuration = LocalConfiguration.current
     val screenheight = configuration.screenHeightDp
-    backbutton(navigateUp, canNavigateBack)
+    Background()
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
+        modifier = Modifier.safeDrawingPadding()
     ) {
+        Backbutton(navigateUp, canNavigateBack)
         Spacer(modifier = Modifier.height((screenheight * (0.12)).dp))
         Image(
             painter = painterResource(R.drawable.pad_3_2x),

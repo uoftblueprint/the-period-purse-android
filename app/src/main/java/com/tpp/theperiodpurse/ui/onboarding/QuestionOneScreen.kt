@@ -29,6 +29,7 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import com.tpp.theperiodpurse.OnboardingScreen
 import com.tpp.theperiodpurse.R
+import com.tpp.theperiodpurse.ui.component.Background
 import com.tpp.theperiodpurse.ui.state.OnboardUIState
 import com.tpp.theperiodpurse.ui.theme.ButtonDisabledColor
 import com.tpp.theperiodpurse.ui.theme.DarkColorPaletteImpl
@@ -58,21 +59,23 @@ fun QuestionOneScreen(
     if (periodCycle == "") {
         entered = false
     }
-    backbutton({
-        onboardUiState.days = 0
-        onboardUiState.symptomsOptions = listOf()
-        onboardUiState.date = ""
-        if (viewModel.checkGoogleLogin(context)) {
-            signOut()
-        }
-        onboardUiState.googleAccount = null
-        navController.navigate(OnboardingScreen.Welcome.name)
-    }, canNavigateBack)
+    Background()
     Box(
         modifier = Modifier
             .fillMaxHeight()
-            .fillMaxWidth(),
+            .fillMaxWidth()
+            .safeDrawingPadding()
     ) {
+        Backbutton({
+            onboardUiState.days = 0
+            onboardUiState.symptomsOptions = listOf()
+            onboardUiState.date = ""
+            if (viewModel.checkGoogleLogin(context)) {
+                signOut()
+            }
+            onboardUiState.googleAccount = null
+            navController.navigate(OnboardingScreen.Welcome.name)
+        }, canNavigateBack)
         Column(
             horizontalAlignment = Alignment.CenterHorizontally,
         ) {
@@ -85,7 +88,6 @@ fun QuestionOneScreen(
                 modifier = Modifier
                     .width(screenwidth.dp)
                     .height(height.dp),
-
             ) {
                 Background_shape()
                 Image(
@@ -142,57 +144,56 @@ fun QuestionOneScreen(
                 entered = entered,
             )
             Spacer(Modifier.height((screenheight * (0.01)).dp))
-        }
-        Row(
-            modifier = Modifier
-                .fillMaxWidth()
-                .align(Alignment.BottomCenter)
-                .padding(bottom = (screenheight * (0.02)).dp),
-            horizontalArrangement = Arrangement.spacedBy(16.dp),
-        ) {
-            TextButton(
-                onClick = {
-                    onboardUiState.days = 0
-                    navController.navigate(OnboardingScreen.QuestionTwo.name)
-                },
-                modifier = modifier
-                    .padding(start = (screenwidth * (0.1)).dp)
-                    .weight(1f)
-                    .semantics { contentDescription = "Skip" },
-                colors = ButtonDefaults.buttonColors(
-                    backgroundColor = Color.Transparent,
-                    disabledBackgroundColor = Color.Transparent,
-                ),
+            Row(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(bottom = (screenheight * (0.02)).dp),
+                horizontalArrangement = Arrangement.spacedBy(16.dp),
             ) {
-                Text(
-                    stringResource(R.string.skip),
-                    color = Color.Black,
-                    fontSize = 20.scaledSp(),
-                )
-            }
-            Button(
-                onClick = {
-                    onSelectionChanged(periodCycle)
-                    navController.navigate(OnboardingScreen.QuestionTwo.name)
-                },
-                enabled = entered,
-                modifier = modifier
-                    .padding(end = (screenwidth * (0.1)).dp)
-                    .weight(1f)
-                    .semantics { contentDescription = "Next" },
-                colors = ButtonDefaults.buttonColors(
-                    backgroundColor = Teal,
-                    disabledBackgroundColor = ButtonDisabledColor,
-                ),
-            ) {
-                Text(stringResource(R.string.next), color = Color.White, fontSize = 20.scaledSp())
+                TextButton(
+                    onClick = {
+                        onboardUiState.days = 0
+                        navController.navigate(OnboardingScreen.QuestionTwo.name)
+                    },
+                    modifier = modifier
+                        .padding(start = (screenwidth * (0.1)).dp)
+                        .weight(1f)
+                        .semantics { contentDescription = "Skip" },
+                    colors = ButtonDefaults.buttonColors(
+                        backgroundColor = Color.Transparent,
+                        disabledBackgroundColor = Color.Transparent,
+                    ),
+                ) {
+                    Text(
+                        stringResource(R.string.skip),
+                        color = Color.Black,
+                        fontSize = 20.scaledSp(),
+                    )
+                }
+                Button(
+                    onClick = {
+                        onSelectionChanged(periodCycle)
+                        navController.navigate(OnboardingScreen.QuestionTwo.name)
+                    },
+                    enabled = entered,
+                    modifier = modifier
+                        .padding(end = (screenwidth * (0.1)).dp)
+                        .weight(1f)
+                        .semantics { contentDescription = "Next" },
+                    colors = ButtonDefaults.buttonColors(
+                        backgroundColor = Teal,
+                        disabledBackgroundColor = ButtonDisabledColor,
+                    ),
+                ) {
+                    Text(stringResource(R.string.next), color = Color.White, fontSize = 20.scaledSp())
+                }
             }
         }
     }
 }
 
 @Composable
-fun backbutton(navigateUp: () -> Unit, canNavigateBack: Boolean) {
+fun Backbutton(navigateUp: () -> Unit, canNavigateBack: Boolean) {
     TopAppBar(
         title = { "" },
         navigationIcon = {

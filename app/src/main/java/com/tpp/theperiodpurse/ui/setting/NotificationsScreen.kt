@@ -31,6 +31,7 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.core.content.ContextCompat
 import com.tpp.theperiodpurse.R
+import com.tpp.theperiodpurse.ui.component.Background
 import com.tpp.theperiodpurse.ui.onboarding.scaledSp
 import com.tpp.theperiodpurse.ui.viewmodel.AppViewModel
 import com.tpp.theperiodpurse.utility.alarm.Alarm
@@ -45,47 +46,6 @@ import java.time.format.DateTimeFormatter
 import java.util.*
 
 /**
- * Represents the notifications screen of the application.
- *
- * @property appViewModel The view model for the app.
- */
-class NotificationsScreen(private val appViewModel: AppViewModel) : ComponentActivity() {
-
-    @RequiresApi(Build.VERSION_CODES.S)
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContent {
-            val context = LocalContext.current
-
-            // Check if the app has notification permission
-            val hasNotificationPermission by remember {
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-                    mutableStateOf(
-                        ContextCompat.checkSelfPermission(
-                            context,
-                            Manifest.permission.POST_NOTIFICATIONS,
-                        ) == PackageManager.PERMISSION_GRANTED,
-                    )
-                } else {
-                    mutableStateOf(true)
-                }
-            }
-
-            NotificationsLayout(
-                LocalContext.current,
-                hasNotificationPermission,
-                temp(),
-                appViewModel,
-            )
-        }
-    }
-}
-
-fun temp() {
-    // Placeholder function
-}
-
-/**
  * Composable function for displaying the notifications layout.
  *
  * @param context The Android application context.
@@ -95,12 +55,10 @@ fun temp() {
  */
 @RequiresApi(Build.VERSION_CODES.S)
 @Composable
-fun NotificationsLayout(context: Context, hasNotificationsPermission: Boolean, appBar: Unit, appViewModel: AppViewModel) {
+fun NotificationsLayout(context: Context, hasNotificationsPermission: Boolean, appViewModel: AppViewModel) {
     val formatter = DateTimeFormatter.ofPattern("h:mm a") // define the format of the input string
     var formattedTime = appViewModel.getReminderTime()
     var pickedTime = LocalTime.parse(formattedTime, formatter)
-
-    appBar
 
     val timeDialogState = rememberMaterialDialogState()
 

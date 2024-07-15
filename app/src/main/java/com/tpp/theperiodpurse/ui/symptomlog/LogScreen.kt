@@ -156,7 +156,7 @@ fun LogScreen(
                     // chcek  if given date is in the db, if it is, delete the entry
                     val dates = appViewModel.getDates()
                     for (d in dates) {
-                        val thisDate = d.date?.toInstant()?.atZone(ZoneId.systemDefault())
+                        val thisDate = d.date.toInstant()?.atZone(ZoneId.systemDefault())
                             ?.toLocalDate()
                         if (thisDate != null) {
                             if (thisDate == day) {
@@ -181,7 +181,9 @@ fun LogScreenLayout(
     appViewModel: AppViewModel,
     onSave: () -> Unit,
 ) {
-    Box() {
+    Box(
+        modifier = Modifier.safeDrawingPadding()
+    ) {
         Column(
             horizontalAlignment = Alignment.CenterHorizontally,
             modifier = Modifier
@@ -326,7 +328,7 @@ private fun LogScreenTopBarContent(navController: NavController, date: LocalDate
 fun LogPromptCards(logPrompts: List<LogPrompt>, logViewModel: LogViewModel, appViewModel: AppViewModel) {
     LazyColumn(modifier = Modifier.background(appViewModel.colorPalette.HeaderColor1)) {
         itemsIndexed(logPrompts) { index, it ->
-            Column() {
+            Column {
                 LogPromptCard(logPrompt = it, logViewModel, appViewModel)
                 if (index != logPrompts.lastIndex) {
                     Divider(
@@ -499,5 +501,5 @@ fun SaveButton(
 @Preview
 @Composable
 fun SaveButtonPreview() {
-    SaveButton() {}
+    SaveButton {}
 }

@@ -40,7 +40,6 @@ fun LoggingOptionsPopup(
                 .fillMaxSize()
                 .background(appViewModel.colorPalette.HeaderColor1.copy(0.8f))
                 .then(modifier)
-                .offset(y = 35.dp)
                 .clickable(
                     interactionSource = MutableInteractionSource(),
                     indication = null,
