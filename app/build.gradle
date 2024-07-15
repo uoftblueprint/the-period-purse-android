@@ -15,10 +15,10 @@ android {
 
     defaultConfig {
         applicationId "com.tpp.theperiodpurse"
-        minSdk 21
+        minSdk 26
         targetSdkVersion 35
-        versionCode 11
-        versionName "2.4.0"
+        versionCode 14
+        versionName "2.4.2"
         testInstrumentationRunner "com.tpp.theperiodpurse.CustomTestRunner"
 
         vectorDrawables {
@@ -110,7 +110,7 @@ dependencies {
     implementation "com.google.accompanist:accompanist-pager:0.25.0"
     implementation "com.google.accompanist:accompanist-pager-indicators:0.25.0"
     implementation "androidx.compose.material:material-icons-extended:$compose_version"
-    androidTestImplementation "androidx.navigation:navigation-testing:2.5.3"
+    androidTestImplementation "androidx.navigation:navigation-testing:2.7.7"
     implementation "com.google.accompanist:accompanist-systemuicontroller:0.27.0"
     androidTestImplementation 'androidx.test:runner:1.1.0'
     androidTestUtil 'androidx.test:orchestrator:1.1.0'
