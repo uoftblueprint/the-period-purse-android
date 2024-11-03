@@ -19,19 +19,23 @@ Menstruation Nation is now available to everyone on [Google Play Store](https://
 
 ## Use cases
 
-* Select a single or multiple symptoms to track, symptoms include Flow, Mood, Sleep, Cramps, Exercises
-* See logs on a chosen symptom 
-* Click on any day to log a symptom
-* See calculated statistics including average period length or predicted days until next period
-* Educational page displaying menstruation products and educational facts
-* No registration required
-* Completely wipe data at any given point
-* Back-up data with Google Firebase
+- Select a single or multiple symptoms to track, symptoms include Flow, Mood, Sleep, Cramps, Exercises
+- See logs on a chosen symptom
+- Click on any day to log a symptom
+- See calculated statistics including average period length or predicted days until next period
+- Educational page displaying menstruation products and educational facts
+- No registration required
+- Completely wipe data at any given point
+- Back-up data with Google Firebase
 
 ## Contributors
 
 This project would not be possible without the combined efforts of the TPP Blueprint team:
 
+2024-2025:
+[Merrick Liu](https://github.com/merrickliu888), [Paridhi Goel](https://github.com/paridhi26), [Patricia Santos](https://github.com/santoaast)
+
+2023-2024:
 [Leo Liu](https://github.com/leowrites), [Manpreet Bhatti](https://github.com/Manpreet-Bhatti), [Manya Mittal](https://github.com/manya-mittal), [Madeline Ahn](https://github.com/madelahn), [Kevin Le](https://github.com/kevinle623), [Elena Wang](https://github.com/elenawzy), [Michael Ng](https://github.com/michaelng0107), [Pierre-William Lessard](https://github.com/PierreLessard), [Yuwei Jiang](https://github.com/Jyw5599)
 
 ## Contributing
