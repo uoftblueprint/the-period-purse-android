@@ -33,7 +33,7 @@ Menstruation Nation is now available to everyone on [Google Play Store](https://
 This project would not be possible without the combined efforts of the TPP Blueprint team:
 
 2024-2025:
-[Merrick Liu](https://github.com/merrickliu888), [Paridhi Goel](https://github.com/paridhi26), [Patricia Santos](https://github.com/santoaast), [Brandon T](https://github.com/BrandonT310442/)
+[Merrick Liu](https://github.com/merrickliu888), [Paridhi Goel](https://github.com/paridhi26), [Patricia Santos](https://github.com/santoaast), [Brandon T](https://github.com/BrandonT310442//)
 
 2023-2024:
 [Leo Liu](https://github.com/leowrites), [Manpreet Bhatti](https://github.com/Manpreet-Bhatti), [Manya Mittal](https://github.com/manya-mittal), [Madeline Ahn](https://github.com/madelahn), [Kevin Le](https://github.com/kevinle623), [Elena Wang](https://github.com/elenawzy), [Michael Ng](https://github.com/michaelng0107), [Pierre-William Lessard](https://github.com/PierreLessard), [Yuwei Jiang](https://github.com/Jyw5599)
