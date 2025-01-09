@@ -22,4 +22,7 @@ data class User(
     val darkMode: Boolean = false,
     val reminderTime: String = "12:00 PM",
     val reminderFreq: String = "Every day",
+    val allowOvulationNotifications: Boolean = false,
+    val averageOvulationPhaseLength: Int = 0,
+    val averageTimeBetweenPeriodAndOvulation: Int = 0
 )

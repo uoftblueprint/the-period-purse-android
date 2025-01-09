@@ -26,4 +26,5 @@ data class Date(
     @TypeConverters(DurationConverter::class)
     val sleep: Duration?,
     val notes: String,
+    val ovulating: Boolean?
 )
