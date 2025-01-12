@@ -55,9 +55,16 @@ class UserRepository(private val userDAO: UserDAO) {
         }
     }
 
+    fun setOvulationNotifications(allowOvulationNotifications: Boolean, context: Context) {
+        coroutineScope.launch(Dispatchers.IO) {
+            ApplicationRoomDatabase.getDatabase(context).userDAO().updateOvulationNotifications(id = 1, allowOvulationNotifications)
+        }
+    }
+
     suspend fun getUser(id: Int, context: Context): User {
         return ApplicationRoomDatabase.getDatabase(context).userDAO().get(id)
     }
+
     suspend fun isEmpty(context: Context): Boolean {
         return withContext(Dispatchers.IO) {
             ApplicationRoomDatabase.getDatabase(context).userDAO()
@@ -69,4 +76,5 @@ class UserRepository(private val userDAO: UserDAO) {
     suspend fun isOnboarded(context: Context) {
         isOnboarded.postValue(ApplicationRoomDatabase.getDatabase(context).userDAO().getUsers().isNotEmpty())
     }
+
 }
