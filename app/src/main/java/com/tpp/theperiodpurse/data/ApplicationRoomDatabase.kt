@@ -20,7 +20,7 @@ import java.io.File
 import javax.inject.Singleton
 
 
-@Database(entities = [User::class, Date::class], version = 8, exportSchema = true)
+@Database(entities = [User::class, Date::class], version = 9, exportSchema = true)
 @Singleton
 @TypeConverters(
     SymptomConverter::class,
@@ -44,6 +44,36 @@ abstract class ApplicationRoomDatabase : RoomDatabase() {
             }
         }
 
+        val MIGRATION_8_9: Migration = object : Migration(8, 9) {
+            override fun migrate(database: SupportSQLiteDatabase) {
+                // Check User table columns
+                val userCursor = database.query("SELECT * FROM users LIMIT 0")
+                val allowOvulationNotificationsExists = userCursor.getColumnIndex("allowOvulationNotifications") != -1
+                val averageOvulationPhaseLengthExists = userCursor.getColumnIndex("averageOvulationPhaseLength") != -1
+                val averageTimeBetweenPeriodAndOvulationExists = userCursor.getColumnIndex("averageTimeBetweenPeriodAndOvulation") != -1
+                userCursor.close()
+
+                // Check Date table column
+                val dateCursor = database.query("SELECT * FROM dates LIMIT 0")
+                val ovulatingExists = dateCursor.getColumnIndex("ovulating") != -1
+                dateCursor.close()
+
+                // Add columns if they don't exist
+                if (!allowOvulationNotificationsExists) {
+                    database.execSQL("ALTER TABLE users ADD COLUMN allowOvulationNotifications INTEGER NOT NULL DEFAULT 0")
+                }
+                if (!averageOvulationPhaseLengthExists) {
+                    database.execSQL("ALTER TABLE users ADD COLUMN averageOvulationPhaseLength INTEGER NOT NULL DEFAULT 0")
+                }
+                if (!averageTimeBetweenPeriodAndOvulationExists) {
+                    database.execSQL("ALTER TABLE users ADD COLUMN averageTimeBetweenPeriodAndOvulation INTEGER NOT NULL DEFAULT 0")
+                }
+                if (!ovulatingExists) {
+                    database.execSQL("ALTER TABLE dates ADD COLUMN ovulating INTEGER DEFAULT 0")
+                }
+            }
+        }
+
         @Volatile
         private var INSTANCE: ApplicationRoomDatabase? = null
         fun getDatabase(context: Context): ApplicationRoomDatabase {
@@ -59,7 +89,7 @@ abstract class ApplicationRoomDatabase : RoomDatabase() {
                         ApplicationRoomDatabase::class.java,
                         databaseFile.absolutePath,
                     )
-                        .addMigrations(MIGRATION_7_8)
+                        .addMigrations(MIGRATION_7_8, MIGRATION_8_9)
                         .addCallback(getCallback())
                         .fallbackToDestructiveMigration()
                         .build()
