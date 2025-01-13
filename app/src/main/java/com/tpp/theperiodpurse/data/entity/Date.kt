@@ -26,5 +26,5 @@ data class Date(
     @TypeConverters(DurationConverter::class)
     val sleep: Duration?,
     val notes: String,
-    val ovulating: Boolean?
+    val ovulating: Boolean? = false // Merrick: Default Value here to prevent build errors. Will probably get rid of this.
 )
