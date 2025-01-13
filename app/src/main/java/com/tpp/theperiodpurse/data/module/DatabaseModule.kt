@@ -3,7 +3,7 @@ package com.tpp.theperiodpurse.data.module
 import android.content.Context
 import com.tpp.theperiodpurse.data.ApplicationRoomDatabase
 import com.tpp.theperiodpurse.data.dao.DateDAO
-import com.tpp.theperiodpurse.data.UserDAO
+import com.tpp.theperiodpurse.data.dao.UserDAO
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

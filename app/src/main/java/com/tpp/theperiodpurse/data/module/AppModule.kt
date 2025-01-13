@@ -1,7 +1,7 @@
 package com.tpp.theperiodpurse.data.module
 
 import com.tpp.theperiodpurse.data.dao.DateDAO
-import com.tpp.theperiodpurse.data.UserDAO
+import com.tpp.theperiodpurse.data.dao.UserDAO
 import com.tpp.theperiodpurse.data.repository.DateRepository
 import com.tpp.theperiodpurse.data.repository.UserRepository
 import com.tpp.theperiodpurse.ui.viewmodel.AppViewModel

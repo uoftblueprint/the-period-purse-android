@@ -4,7 +4,7 @@ import android.content.Context
 import androidx.lifecycle.MutableLiveData
 import com.google.gson.Gson
 import com.tpp.theperiodpurse.data.ApplicationRoomDatabase
-import com.tpp.theperiodpurse.data.UserDAO
+import com.tpp.theperiodpurse.data.dao.UserDAO
 import com.tpp.theperiodpurse.data.entity.User
 import com.tpp.theperiodpurse.data.model.Symptom
 import kotlinx.coroutines.CoroutineScope
