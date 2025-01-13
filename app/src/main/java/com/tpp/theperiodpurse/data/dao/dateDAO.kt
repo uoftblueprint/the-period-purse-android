@@ -1,4 +1,4 @@
-package com.tpp.theperiodpurse.data
+package com.tpp.theperiodpurse.data.dao
 
 import androidx.room.*
 import com.tpp.theperiodpurse.data.entity.Date

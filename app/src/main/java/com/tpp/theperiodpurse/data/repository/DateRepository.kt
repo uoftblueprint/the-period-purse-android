@@ -3,7 +3,7 @@ package com.tpp.theperiodpurse.data.repository
 import android.content.Context
 import android.util.Log
 import com.tpp.theperiodpurse.data.ApplicationRoomDatabase
-import com.tpp.theperiodpurse.data.DateDAO
+import com.tpp.theperiodpurse.data.dao.DateDAO
 import com.tpp.theperiodpurse.data.entity.Date
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
