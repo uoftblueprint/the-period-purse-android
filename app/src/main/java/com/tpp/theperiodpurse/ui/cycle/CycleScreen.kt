@@ -88,6 +88,21 @@ fun CycleScreenLayout(
                     modifier = Modifier.weight(1f)
                 )
             }
+            Spacer(modifier = Modifier.height(30.dp))
+
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.SpaceBetween
+            ) {
+                AverageLengthBox(
+                    title = "Ovulation Cycle",
+                    color = appViewModel.colorPalette.cycleBlue,
+                    length = periodLength,
+                    image = painterResource(R.drawable.flow_with_heart),
+                    modifier = Modifier.weight(1f) // Takes up half the width
+                )
+                Spacer(modifier = Modifier.weight(1f)) // Mimics the second box to take up half the width
+            }
             Spacer(modifier.height(30.dp))
             CycleHistoryBox(
                 dates = dates,
