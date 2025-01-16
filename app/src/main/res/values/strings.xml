@@ -22,6 +22,7 @@
     <string name="exercise">Exercise</string>
     <string name="cramps">Cramps</string>
     <string name="sleep">Sleep</string>
+    <string name="ovulation">Ovulation</string>
     <string name="flow">Flow</string>
     <string name="notes">Notes</string>
     <string name="order_details">Average period length: %1$s \n Last period: %2$s \nSymptoms to log: %3$s</string>
