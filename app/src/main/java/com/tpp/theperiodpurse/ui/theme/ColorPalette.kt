@@ -29,6 +29,7 @@ interface ColorPalette {
     val ButtonDisabledColor: Color
     val cyclePink: Color
     val cycleBlue: Color
+    val cycleTurquoise: Color
     val popUpTopBar: Color
     val productBackground: Color
 
@@ -59,6 +60,8 @@ class DarkColorPaletteImpl : ColorPalette {
     override val ButtonDisabledColor = Color(0xFFA9BDBA)
     override val cyclePink = Color(	250, 103, 103)
     override val cycleBlue = Color(	90, 159, 147)
+    override val cycleTurquoise = Color(	105, 218, 198)
+
     override val popUpTopBar = Color(0xFF282D2D)
     override val productBackground = Color(0xFF6D6E71).copy(0.6f)
 
@@ -92,6 +95,7 @@ class LightColorPaletteImpl : ColorPalette {
     override val ButtonDisabledColor = Color(0xFFA9BDBA)
     override val cyclePink = Color(0xFFFEDBDB)
     override val cycleBlue = Color(0xFFBAE0D8)
+    override val cycleTurquoise = Color(	105, 218, 198)
     override val popUpTopBar = Color(0xFFEFEFF4)
     override val productBackground = Color(pink)
 
