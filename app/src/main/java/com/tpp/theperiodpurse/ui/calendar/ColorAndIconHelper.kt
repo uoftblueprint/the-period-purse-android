@@ -26,6 +26,8 @@ fun getDayColorAndIcon(
             Pair(defaultColor, moodOptions(calendarDayUIState))
         Symptom.SLEEP ->
             Pair(sleepScoreOptions(calendarDayUIState, defaultColor), R.drawable.blank)
+        Symptom.OVULATION -> Pair(defaultColor, R.drawable.ovulation_egg)
+
     }
 }
 

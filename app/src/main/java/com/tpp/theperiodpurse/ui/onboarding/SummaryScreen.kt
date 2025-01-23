@@ -270,6 +270,10 @@ fun getSymptomsToTrack(strList: List<String>): ArrayList<Symptom> {
             "Sleep" -> {
                 list_so_far.add(Symptom.SLEEP)
             }
+
+            "Ovulation" -> {
+                list_so_far.add(Symptom.OVULATION)
+            }
         }
     }
     return list_so_far
