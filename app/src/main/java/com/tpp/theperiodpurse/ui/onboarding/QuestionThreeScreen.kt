@@ -155,7 +155,7 @@ fun QuestionThreeScreen(
                     )
                 }
             }
-            Spacer(modifier = Modifier.height((screenheight * (0.005)).dp))
+            Spacer(modifier = Modifier.height((screenheight * (0.04)).dp))
             Row() {
                 Column(
                     modifier = Modifier
@@ -167,15 +167,15 @@ fun QuestionThreeScreen(
                                 selectedValue = selectedValue + "|" + item
                             }
                         })
-                        .padding(horizontal = (screenheight * 0.02).dp)
+                        .padding(start = (screenheight * 0.02).dp, end = 8.dp)
                         .semantics { contentDescription = "Mood" },
                     verticalArrangement = Arrangement.Center,
                     horizontalAlignment = Alignment.CenterHorizontally,
                 ) {
                     Box(
                         modifier = Modifier
-                            .height((screenheight * (0.08)).dp)
-                            .width((screenheight * (0.08)).dp)
+                            .height((screenheight * (0.07)).dp)
+                            .width((screenheight * (0.07)).dp)
                             .clip(RoundedCornerShape(30))
                             .then(
                                 if (!selectedValue.contains("Mood")) {
@@ -189,7 +189,7 @@ fun QuestionThreeScreen(
                             painter = painterResource(R.drawable.sentiment_neutral_black_24dp),
                             contentDescription = "Mood",
                             modifier = Modifier
-                                .size((screenheight * (0.05)).dp)
+                                .size((screenheight * (0.04)).dp)
                                 .align(Alignment.Center),
                         )
                     }
@@ -208,15 +208,15 @@ fun QuestionThreeScreen(
                                 selectedValue = selectedValue + "|" + item
                             }
                         })
-                        .padding(horizontal = 13.dp)
+                        .padding(horizontal = 8.dp)
                         .semantics { contentDescription = "fitness" },
                     verticalArrangement = Arrangement.Center,
                     horizontalAlignment = Alignment.CenterHorizontally,
                 ) {
                     Box(
                         modifier = Modifier
-                            .height((screenheight * (0.08)).dp)
-                            .width((screenheight * (0.08)).dp)
+                            .height((screenheight * (0.07)).dp)
+                            .width((screenheight * (0.07)).dp)
                             .clip(RoundedCornerShape(30))
                             .then(
                                 if (!selectedValue.contains("Exercise")) {
@@ -230,7 +230,7 @@ fun QuestionThreeScreen(
                             painter = painterResource(R.drawable.self_improvement_black_24dp),
                             contentDescription = "Exercise",
                             modifier = Modifier
-                                .size((screenheight * (0.05)).dp)
+                                .size((screenheight * (0.04)).dp)
                                 .align(Alignment.Center),
                         )
                     }
@@ -249,15 +249,15 @@ fun QuestionThreeScreen(
                                 selectedValue = selectedValue + "|" + item
                             }
                         })
-                        .padding(horizontal = 13.dp)
+                        .padding(horizontal = 8.dp)
                         .semantics { contentDescription = "Cramps" },
                     verticalArrangement = Arrangement.Center,
                     horizontalAlignment = Alignment.CenterHorizontally,
                 ) {
                     Box(
                         modifier = Modifier
-                            .height((screenheight * (0.08)).dp)
-                            .width((screenheight * (0.08)).dp)
+                            .height((screenheight * (0.07)).dp)
+                            .width((screenheight * (0.07)).dp)
                             .clip(RoundedCornerShape(30))
                             .then(
                                 if (!selectedValue.contains("Cramps")) {
@@ -271,7 +271,7 @@ fun QuestionThreeScreen(
                             painter = painterResource(R.drawable.sick_black_24dp),
                             contentDescription = "Cramps",
                             modifier = Modifier
-                                .size((screenheight * (0.05)).dp)
+                                .size((screenheight * (0.04)).dp)
                                 .align(Alignment.Center),
                         )
                     }
@@ -290,15 +290,15 @@ fun QuestionThreeScreen(
                                 selectedValue = selectedValue + "|" + item
                             }
                         })
-                        .padding(horizontal = 13.dp)
-                        .semantics { contentDescription = "Exercise" },
+                        .padding(horizontal = 8.dp)
+                        .semantics { contentDescription = "Sleep" },
                     verticalArrangement = Arrangement.Center,
                     horizontalAlignment = Alignment.CenterHorizontally,
                 ) {
                     Box(
                         modifier = Modifier
-                            .height((screenheight * (0.08)).dp)
-                            .width((screenheight * (0.08)).dp)
+                            .height((screenheight * (0.07)).dp)
+                            .width((screenheight * (0.07)).dp)
                             .clip(RoundedCornerShape(30))
                             .semantics { contentDescription = "Sleep" }
                             .then(
@@ -313,12 +313,54 @@ fun QuestionThreeScreen(
                             painter = painterResource(R.drawable.nightlight_black_24dp),
                             contentDescription = "Sleep",
                             modifier = Modifier
-                                .size((screenheight * (0.05)).dp)
+                                .size((screenheight * (0.04)).dp)
                                 .align(Alignment.Center),
                         )
                     }
                     Text(
                         text = stringResource(R.string.sleep),
+                        fontSize = 13.scaledSp(),
+                    )
+                }
+                Column(
+                    modifier = Modifier
+                        .selectable(selected = selectedValue.contains("Ovulation"), onClick = {
+                            val item = "Ovulation"
+                            if (selectedValue.contains(item)) {
+                                selectedValue = selectedValue.replace(item, "")
+                            } else if (!selectedValue.contains(item)) {
+                                selectedValue = selectedValue + "|" + item
+                            }
+                        })
+                        .padding(start = 8.dp, end = (screenheight * 0.02).dp)
+                        .semantics { contentDescription = "Ovulation" },
+                    verticalArrangement = Arrangement.Center,
+                    horizontalAlignment = Alignment.CenterHorizontally,
+                ) {
+                    Box(
+                        modifier = Modifier
+                            .height((screenheight * (0.07)).dp)
+                            .width((screenheight * (0.07)).dp)
+                            .clip(RoundedCornerShape(30))
+                            .semantics { contentDescription = "Ovulation" }
+                            .then(
+                                if (!selectedValue.contains("Ovulation")) {
+                                    Modifier.background(Color.White)
+                                } else Modifier.background(
+                                    Color(rgb(142, 212, 193)),
+                                ),
+                            ),
+                    ) {
+                        Image(
+                            painter = painterResource(R.drawable.ovulation_egg),
+                            contentDescription = "Ovulation",
+                            modifier = Modifier
+                                .size((screenheight * (0.04)).dp)
+                                .align(Alignment.Center),
+                        )
+                    }
+                    Text(
+                        text = stringResource(R.string.ovulation),
                         fontSize = 13.scaledSp(),
                     )
                 }
