@@ -172,7 +172,7 @@ fun SummaryScreen(
 
                                     "Ovulation" ->
                                         painter =
-                                            painterResource(R.drawable.ovulation_egg)
+                                            painterResource(R.drawable.ovulation_egg_24dp)
 
                                     else -> { // Note the block
                                         dontprint = true
