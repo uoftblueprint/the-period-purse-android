@@ -38,6 +38,7 @@ class CalendarViewModel : ViewModel() {
                 sleepString = if (dayUIState.sleepString != "") {
                     dayUIState.sleepString
                 } else original.sleepString,
+                ovulation = dayUIState.ovulation
             )
         }
         _uiState.value.days[day] = newState

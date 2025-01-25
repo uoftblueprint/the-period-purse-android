@@ -68,6 +68,14 @@ class LogViewModel(val logPrompts: List<LogPrompt>) : ViewModel() {
         }
         return null
     }
+    fun getSelectedOvulation(): Ovulation? {
+        var selectedOvulation = uiState.value.selectSquares[LogPrompt.Ovulation.title]
+        if (selectedOvulation is String) {
+            if (selectedOvulation == "") selectedOvulation = "Not Ovulating"
+            return Ovulation.getOvulationByDisplayName(selectedOvulation)
+        }
+        return null
+    }
 
     fun getSelectedCrampSeverity(): CrampSeverity? {
         var selectedCrampSeverity = uiState.value.selectSquares[LogPrompt.Cramps.title]

@@ -99,6 +99,11 @@ fun LogScreen(
                 if (cramps != null && cramps.name == "None") {
                     cramps = null
                 }
+                var ovulation = logViewModel.getSelectedOvulation()
+                if (ovulation != null && ovulation.name == "Not Ovulating") {
+                    ovulation = null
+
+                }
                 calendarViewModel.setDayInfo(
                     day,
                     CalendarDayUIState(
@@ -108,6 +113,7 @@ fun LogScreen(
                         exerciseType = logViewModel.getSelectedExercise(),
                         crampSeverity = cramps,
                         sleepString = logViewModel.getText(LogPrompt.Sleep),
+//                        ovulation = ovulation // Error
                     ),
                 )
                 if (logViewModel.isFilled()) {
@@ -149,6 +155,7 @@ fun LogScreen(
                                 ?.let { CrampSeverity.getSeverityByDisplayName(it) },
                             sleep = sleepDuration,
                             notes = logViewModel.getText(LogPrompt.Notes),
+                            ovulation = logViewModel.getSquareSelected(LogPrompt.Ovulation)
                         ),
                         context,
                     )

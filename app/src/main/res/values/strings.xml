@@ -46,6 +46,9 @@
     <string name="log_multiple_dates_header_body">Selected dates will have their Flow level set to Medium</string>
 
     <string name="period_flow">Period Flow</string>
+    <string name="ovulation">Ovulation</string>
+    <string name="ovulating">Ovulating</string>
+    <string name="not_ovulating">Not Ovulating</string>
     <string name="expand_button_symptoms_content_description">Expand to switch symptoms</string>
     <string name="fab_to_calendar">Navigate to Calendar page</string>
     <string name="fab_see_log_options">Open logging options</string>

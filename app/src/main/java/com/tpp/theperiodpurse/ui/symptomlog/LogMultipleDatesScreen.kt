@@ -29,6 +29,7 @@ import com.kizitonwose.calendar.core.firstDayOfWeekFromLocale
 import com.tpp.theperiodpurse.R
 import com.tpp.theperiodpurse.data.entity.Date
 import com.tpp.theperiodpurse.data.model.FlowSeverity
+import com.tpp.theperiodpurse.data.model.Ovulation
 import com.tpp.theperiodpurse.ui.calendar.components.Day
 import com.tpp.theperiodpurse.ui.calendar.components.MonthHeader
 import com.tpp.theperiodpurse.ui.component.PopupTopBar
@@ -125,6 +126,7 @@ fun LogMultipleDatesScreen(
                             Date(
                                 date = from(it.atStartOfDay(ZoneId.systemDefault()).toInstant()),
                                 flow = FlowSeverity.Medium,
+                                ovulating = false,
                                 exerciseType = null,
                                 exerciseLength = null,
                                 crampSeverity = null,
