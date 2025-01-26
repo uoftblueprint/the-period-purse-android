@@ -19,6 +19,7 @@ import com.tpp.theperiodpurse.ui.cycle.components.CycleHistoryBox
 import com.tpp.theperiodpurse.ui.cycle.components.UpcomingPeriodBox
 import com.tpp.theperiodpurse.ui.viewmodel.AppViewModel
 import com.tpp.theperiodpurse.utility.calculateAverageCycleLength
+import com.tpp.theperiodpurse.utility.calculateAverageOvulationLength
 import com.tpp.theperiodpurse.utility.calculateAveragePeriodLength
 import com.tpp.theperiodpurse.utility.calculateDaysSinceLastPeriod
 import kotlin.collections.ArrayList
@@ -26,7 +27,7 @@ import kotlin.math.max
 
 private var periodLength = (-1).toFloat()
 private var cycleLength = (-1).toFloat()
-
+private var ovulationLength = (-1).toFloat()
 @Composable
 fun CycleScreenLayout(
     appViewModel: AppViewModel,
@@ -38,7 +39,7 @@ fun CycleScreenLayout(
 
     periodLength = calculateAveragePeriodLength(dates)
     cycleLength = calculateAverageCycleLength(dates)
-
+    ovulationLength = calculateAverageOvulationLength(dates)
     val daysUntilNextPeriod = max((cycleLength - calculateDaysSinceLastPeriod(dates)).toInt(), 0)
 
     Box {
@@ -94,14 +95,17 @@ fun CycleScreenLayout(
                 modifier = Modifier.fillMaxWidth(),
                 horizontalArrangement = Arrangement.SpaceBetween
             ) {
-                AverageLengthBox(
-                    title = "Ovulation Cycle",
-                    color = appViewModel.colorPalette.cycleTurquoise,
-                    length = periodLength,
-                    image = painterResource(R.drawable.ovulationegg),
-                    modifier = Modifier.weight(1f) // Takes up half the width
-                )
-                Spacer(modifier = Modifier.weight(1f)) // Mimics the second box to take up half the width
+                // Check if "Ovulation" is being tracked
+                if (appViewModel.getTrackedSymptoms().any { it.name == "Ovulation" }) {
+                    AverageLengthBox(
+                        title = "Ovulation Cycle",
+                        color = appViewModel.colorPalette.cycleTurquoise,
+                        length = ovulationLength,
+                        image = painterResource(R.drawable.ovulation_egg),
+                        modifier = Modifier.weight(1f) // Takes up half the width
+                    )
+                    Spacer(modifier = Modifier.weight(1f)) // Mimics the second box to take up half the width
+                }
             }
             Spacer(modifier.height(30.dp))
             CycleHistoryBox(
