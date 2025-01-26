@@ -132,6 +132,7 @@ fun SummaryScreen(
                 "Exercise",
                 "Cramps",
                 "Sleep",
+                "Ovulation",
             )
             Row() {
                 var dontprint = false
@@ -168,6 +169,10 @@ fun SummaryScreen(
                                     "Sleep" ->
                                         painter =
                                             painterResource(R.drawable.nightlight_black_24dp)
+
+                                    "Ovulation" ->
+                                        painter =
+                                            painterResource(R.drawable.ovulation_egg)
 
                                     else -> { // Note the block
                                         dontprint = true
@@ -264,6 +269,10 @@ fun getSymptomsToTrack(strList: List<String>): ArrayList<Symptom> {
 
             "Sleep" -> {
                 list_so_far.add(Symptom.SLEEP)
+            }
+
+            "Ovulation" -> {
+                list_so_far.add(Symptom.OVULATION)
             }
         }
     }
