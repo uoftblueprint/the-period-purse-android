@@ -302,7 +302,7 @@ fun TrackingPreferencesRow(symptoms: List<Symptom>, modifier: Modifier = Modifie
         TrackingOptionButton(
             modifier = modifier,
             label = stringResource(R.string.ovulation),
-            icon = painterResource(id = R.drawable.ovulation_egg),
+            icon = painterResource(id = R.drawable.ovulation_egg_24dp),
             contentDescription = stringResource(R.string.ovulation),
             ischecked = symptoms.contains(Symptom.OVULATION),
             symptom = Symptom.OVULATION,
