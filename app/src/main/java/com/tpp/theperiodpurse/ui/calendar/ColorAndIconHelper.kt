@@ -26,8 +26,7 @@ fun getDayColorAndIcon(
             Pair(defaultColor, moodOptions(calendarDayUIState))
         Symptom.SLEEP ->
             Pair(sleepScoreOptions(calendarDayUIState, defaultColor), R.drawable.blank)
-        Symptom.OVULATION -> Pair(defaultColor, R.drawable.ovulation_egg)
-
+        Symptom.OVULATION -> ovulationOptions(calendarDayUIState, default)
     }
 }
 
@@ -110,4 +109,11 @@ private fun sleepScoreOptions(calendarDayUIState: CalendarDayUIState, defaultCol
         Sleep.Heavy -> Color(0xFF133364)
         null -> defaultColor
     }
+}
+
+private fun ovulationOptions(calendarDayUIState: CalendarDayUIState, default: Pair<Color, Int>): Pair<Color, Int> {
+    if (calendarDayUIState.ovulating == true) {
+        return Pair(Color(0xFF69DAC6), R.drawable.ovulation_egg_24dp)
+    }
+    return default
 }

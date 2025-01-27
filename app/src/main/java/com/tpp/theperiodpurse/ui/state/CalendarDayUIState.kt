@@ -11,6 +11,7 @@ data class CalendarDayUIState(
     val exerciseType: Exercise? = null,
     val crampSeverity: CrampSeverity? = null,
     val sleepString: String = "",
+    val ovulating: Boolean? = null,
 ) {
     private val formatter = DateTimeFormatter.ISO_LOCAL_TIME
 

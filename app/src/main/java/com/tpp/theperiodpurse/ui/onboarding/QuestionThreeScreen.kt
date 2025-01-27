@@ -352,7 +352,7 @@ fun QuestionThreeScreen(
                             ),
                     ) {
                         Image(
-                            painter = painterResource(R.drawable.ovulation_egg),
+                            painter = painterResource(R.drawable.ovulation_egg_24dp),
                             contentDescription = "Ovulation",
                             modifier = Modifier
                                 .size((screenheight * (0.04)).dp)
