@@ -4,6 +4,7 @@ import com.tpp.theperiodpurse.data.model.*
 import java.time.LocalTime
 import java.time.format.DateTimeFormatter
 
+// TODO @Helen add a field for ovulating. This filed should be of type Boolean? = null
 data class CalendarDayUIState(
     val flow: FlowSeverity?,
     val mood: Mood? = null,
