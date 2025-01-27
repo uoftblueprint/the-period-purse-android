@@ -9,6 +9,7 @@ import com.tpp.theperiodpurse.data.model.CrampSeverity
 import com.tpp.theperiodpurse.data.model.Exercise
 import com.tpp.theperiodpurse.data.model.FlowSeverity
 import com.tpp.theperiodpurse.data.model.Mood
+import com.tpp.theperiodpurse.data.model.Ovulation
 import java.time.Duration
 import java.util.Date
 
@@ -26,5 +27,5 @@ data class Date(
     @TypeConverters(DurationConverter::class)
     val sleep: Duration?,
     val notes: String,
-    val ovulating: Boolean? = false // Merrick: Default Value here to prevent build errors. Will probably get rid of this.
+    val ovulating: Ovulation? = null
 )
