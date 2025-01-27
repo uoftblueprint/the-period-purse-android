@@ -20,7 +20,7 @@ import java.io.File
 import javax.inject.Singleton
 
 
-@Database(entities = [User::class, Date::class], version = 9, exportSchema = true)
+@Database(entities = [User::class, Date::class], version = 10, exportSchema = true)
 @Singleton
 @TypeConverters(
     SymptomConverter::class,
@@ -74,6 +74,28 @@ abstract class ApplicationRoomDatabase : RoomDatabase() {
             }
         }
 
+        val MIGRATION_9_10: Migration = object : Migration(9, 10) {
+            override fun migrate(database: SupportSQLiteDatabase) {
+                // Step 1: Add a new temporary column to store the new enum values
+                database.execSQL("ALTER TABLE dates ADD COLUMN temp_ovulating TEXT")
+
+                // Step 2: Populate the temporary column based on the current `ovulating` column
+                database.execSQL("""
+            UPDATE dates
+            SET temp_ovulating = CASE
+                WHEN ovulating = 1 THEN 'Ovulating'
+                WHEN ovulating = 0 THEN NULL
+            END
+        """)
+
+                // Step 3: Drop the old `ovulating` column
+                database.execSQL("ALTER TABLE dates DROP COLUMN ovulating")
+
+                // Step 4: Rename the temporary column to `ovulating`
+                database.execSQL("ALTER TABLE dates RENAME COLUMN temp_ovulating TO ovulating")
+            }
+        }
+
         @Volatile
         private var INSTANCE: ApplicationRoomDatabase? = null
         fun getDatabase(context: Context): ApplicationRoomDatabase {
@@ -89,7 +111,7 @@ abstract class ApplicationRoomDatabase : RoomDatabase() {
                         ApplicationRoomDatabase::class.java,
                         databaseFile.absolutePath,
                     )
-                        .addMigrations(MIGRATION_7_8, MIGRATION_8_9)
+                        .addMigrations(MIGRATION_7_8, MIGRATION_8_9, MIGRATION_9_10)
                         .addCallback(getCallback())
                         .fallbackToDestructiveMigration()
                         .build()
