@@ -11,27 +11,42 @@ import com.tpp.theperiodpurse.data.entity.Date as TPPDate
  * TODO: @Muhtasim use this as dummy function for now.
  */
 fun calculateAverageOvulationLength(periodHistory: ArrayList<TPPDate>): Float {
-    if (periodHistory.isEmpty()) return -1f
+    // Use the helper function to process ovulation dates
+    val ovulationDates = processDatesForOvulation(periodHistory)
 
-    // filter ovulation dates
-    val ovulationDates = periodHistory
-        .filter { it.ovulating == true }
-        .map { it.date }
-        .sorted()
-
-    // no ovulation available
+    // No ovulation dates found
     if (ovulationDates.isEmpty()) return -1f
 
-    // return 0 if you have 1 ovulation (since no interval)
-    if (ovulationDates.size == 1) return 0f
+    // Sort the ovulation dates by date
+    val sortedOvulationDates = ovulationDates.sortedBy { it.date }
 
-    // Calculate the differences in days between consecutive ovulation dates
-    val dayDifferences = ovulationDates.zipWithNext { first, second ->
-        ChronoUnit.DAYS.between(first.toInstant(), second.toInstant())
+    val ovulationLengths = ArrayList<Int>()
+
+    var currentDate = sortedOvulationDates[0].date
+    var consecutiveDays = 1
+
+    for (i in 1 until sortedOvulationDates.size) {
+        val nextDate = addOneDay(currentDate)
+
+        if (nextDate == sortedOvulationDates[i].date) {
+            consecutiveDays += 1
+        } else {
+            ovulationLengths.add(consecutiveDays)
+            consecutiveDays = 1
+        }
+        currentDate = sortedOvulationDates[i].date
     }
 
-    // Calculate the average of the differences
-    val averageDays = dayDifferences.average()
+    // Add the last phase length
+    ovulationLengths.add(consecutiveDays)
 
-    return averageDays.toFloat()
+    // Calculate and return the average ovulation length
+    return ovulationLengths.sum().toFloat() / ovulationLengths.size
+}
+
+
+fun processDatesForOvulation(dates: ArrayList<TPPDate>): ArrayList<TPPDate> {
+    // Filter for dates where ovulating is true and remove duplicates
+    val filteredDates = dates.filter { it.ovulating == true }.distinctBy { it.date }
+    return ArrayList(filteredDates)
 }
