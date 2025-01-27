@@ -112,7 +112,8 @@ private fun sleepScoreOptions(calendarDayUIState: CalendarDayUIState, defaultCol
 }
 
 private fun ovulationOptions(calendarDayUIState: CalendarDayUIState, default: Pair<Color, Int>): Pair<Color, Int> {
-    // when calendarDayUIState.ovulating is true return Pair(<the teal colour>, R.drawable.ovulation_egg_24dp)
-    // if it is null return default
-    return default // Placeholder this will be the null case
+    if (calendarDayUIState.ovulating == true) {
+        return Pair(Color(0xFF69DAC6), R.drawable.ovulation_egg_24dp)
+    }
+    return default
 }
