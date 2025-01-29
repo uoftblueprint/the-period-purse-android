@@ -1,5 +1,5 @@
 package com.tpp.theperiodpurse.data.module
-
+import android.content.Context
 import com.tpp.theperiodpurse.data.dao.DateDAO
 import com.tpp.theperiodpurse.data.dao.UserDAO
 import com.tpp.theperiodpurse.data.repository.DateRepository
@@ -10,6 +10,7 @@ import com.tpp.theperiodpurse.ui.viewmodel.OnboardViewModel
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
+import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import javax.inject.Singleton
 
@@ -30,8 +31,12 @@ object AppModule {
 
     @Singleton
     @Provides
-    fun provideAppViewModel(userRepository: UserRepository, dateRepository: DateRepository): AppViewModel {
-        return AppViewModel(userRepository, dateRepository)
+    fun provideAppViewModel(
+        userRepository: UserRepository,
+        dateRepository: DateRepository,
+        @ApplicationContext context: Context // Correct usage of @ApplicationContext
+    ): AppViewModel {
+        return AppViewModel(userRepository, dateRepository, context)
     }
 
     @Singleton

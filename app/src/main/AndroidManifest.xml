@@ -7,6 +7,8 @@
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="com.google.android.gms.permission.AD_ID"/>
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+
 
     <application
         android:allowBackup="true"
@@ -49,6 +51,7 @@
                 <action android:name="APP_SPECIFIC_BROADCAST" />
             </intent-filter>
         </receiver>
+        <receiver android:name=".receiver.OvulationAlarm" android:exported="false"/>
     </application>
 
 
