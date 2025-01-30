@@ -41,6 +41,7 @@
     <string name="period_history">Period History</string>
     <string name="avg_period_len">Average period length</string>
     <string name="avg_cycle_len">Average cycle length</string>
+    <string name="avg_ovulation_len">Average ovulation length</string>
     <string name="fab_to_calender">Average cycle length</string>
     <string name="show_more">Show More ></string>
     <string name="log_multiple_dates_header_title">Tap date to log period</string>

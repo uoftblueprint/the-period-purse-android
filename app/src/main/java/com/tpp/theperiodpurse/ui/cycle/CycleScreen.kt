@@ -13,6 +13,7 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.tpp.theperiodpurse.R
 import com.tpp.theperiodpurse.Screen
+import com.tpp.theperiodpurse.data.model.Symptom
 import com.tpp.theperiodpurse.ui.cycle.components.AverageLengthBox
 import com.tpp.theperiodpurse.ui.cycle.components.CurrentCycleBox
 import com.tpp.theperiodpurse.ui.cycle.components.CycleHistoryBox
@@ -20,12 +21,14 @@ import com.tpp.theperiodpurse.ui.cycle.components.UpcomingPeriodBox
 import com.tpp.theperiodpurse.ui.viewmodel.AppViewModel
 import com.tpp.theperiodpurse.utility.calculateAverageCycleLength
 import com.tpp.theperiodpurse.utility.calculateAveragePeriodLength
+import com.tpp.theperiodpurse.utility.calculateAverageOvulationLength
 import com.tpp.theperiodpurse.utility.calculateDaysSinceLastPeriod
 import kotlin.collections.ArrayList
 import kotlin.math.max
 
 private var periodLength = (-1).toFloat()
 private var cycleLength = (-1).toFloat()
+private var ovulationLength = (-1).toFloat()
 
 @Composable
 fun CycleScreenLayout(
@@ -38,6 +41,7 @@ fun CycleScreenLayout(
 
     periodLength = calculateAveragePeriodLength(dates)
     cycleLength = calculateAverageCycleLength(dates)
+    ovulationLength = calculateAverageOvulationLength(dates)
 
     val daysUntilNextPeriod = max((cycleLength - calculateDaysSinceLastPeriod(dates)).toInt(), 0)
 
@@ -57,7 +61,7 @@ fun CycleScreenLayout(
                 .fillMaxHeight()
                 .padding(horizontal = 20.dp, vertical = 25.dp),
         ) {
-            // show if next predicted <= 7 days
+            // if next predicted <= 7 days
             if (daysUntilNextPeriod <= 7) {
                 if (daysUntilNextPeriod <= 0) {
                     UpcomingPeriodBox("You period will likely come any day now!",
@@ -87,6 +91,24 @@ fun CycleScreenLayout(
                     image = painterResource(R.drawable.menstruation_calendar__1_),
                     modifier = Modifier.weight(1f)
                 )
+            }
+            Spacer(modifier = Modifier.height(30.dp))
+
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.SpaceBetween
+            ) {
+                // Check if "Ovulation" is being tracked
+                if (appViewModel.getTrackedSymptoms().any { it.name == Symptom.OVULATION.name }) {
+                    AverageLengthBox(
+                        title = stringResource(R.string.avg_ovulation_len),
+                        color = appViewModel.colorPalette.cycleBlue,
+                        length = ovulationLength,
+                        image = painterResource(R.drawable.ovulation_egg_24dp),
+                        modifier = Modifier.weight(1f) // Takes up half the width
+                    )
+                    Spacer(modifier = Modifier.weight(1f)) // Mimics the second box to take up half the width
+                }
             }
             Spacer(modifier.height(30.dp))
             CycleHistoryBox(
