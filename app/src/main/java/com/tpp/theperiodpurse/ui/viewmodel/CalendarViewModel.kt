@@ -30,6 +30,7 @@ class CalendarViewModel : ViewModel() {
             newState = CalendarDayUIState(
                 flow = dayUIState.flow ?: original.flow,
                 mood = dayUIState.mood ?: original.mood,
+                ovulating = dayUIState.ovulating ?: original.ovulating,
                 exerciseLengthString = if (dayUIState.exerciseLengthString != "") {
                     dayUIState.exerciseLengthString
                 } else original.exerciseLengthString,
@@ -51,6 +52,7 @@ class CalendarViewModel : ViewModel() {
             val newState = CalendarDayUIState(
                 flow = null,
                 mood = original.mood,
+                ovulating = null,
                 exerciseLengthString = original.exerciseLengthString,
                 exerciseType = original.exerciseType,
                 crampSeverity = original.crampSeverity,

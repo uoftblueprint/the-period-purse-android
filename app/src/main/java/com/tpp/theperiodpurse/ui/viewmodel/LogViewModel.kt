@@ -27,6 +27,9 @@ class LogViewModel(val logPrompts: List<LogPrompt>) : ViewModel() {
             if (dayUIState.flow != null) {
                 selectSquares[LogPrompt.Flow.title] = dayUIState.flow.displayName
             }
+            if (dayUIState.ovulating != null) {
+                selectSquares[LogPrompt.Ovulation.title] = dayUIState.ovulating.displayName
+            }
             if (dayUIState.mood != null) {
                 selectSquares[LogPrompt.Mood.title] = dayUIState.mood.displayName
             }
@@ -68,7 +71,14 @@ class LogViewModel(val logPrompts: List<LogPrompt>) : ViewModel() {
         }
         return null
     }
-
+    fun getOvulation(): Ovulation? {
+        var selectedOvulation = uiState.value.selectSquares[LogPrompt.Ovulation.title]
+        if (selectedOvulation is String) {
+            if (selectedOvulation == "") return null
+            return Ovulation.getOvulationByDisplayName(selectedOvulation)
+        }
+        return null
+    }
     fun getSelectedCrampSeverity(): CrampSeverity? {
         var selectedCrampSeverity = uiState.value.selectSquares[LogPrompt.Cramps.title]
         if (selectedCrampSeverity is String) {
