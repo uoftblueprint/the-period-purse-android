@@ -164,7 +164,7 @@ class LogViewModel(val logPrompts: List<LogPrompt>) : ViewModel() {
                     return true
                 }
             }
-            if (it == LogPrompt.Sleep || it == LogPrompt.Mood || it == LogPrompt.Exercise) {
+            if (it == LogPrompt.Sleep || it == LogPrompt.Mood || it == LogPrompt.Exercise || it == LogPrompt.Ovulation) {
                 if (this.getSquareSelected(it) != null) {
                     return true
                 }

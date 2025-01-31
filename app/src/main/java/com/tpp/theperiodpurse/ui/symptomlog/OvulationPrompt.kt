@@ -34,7 +34,7 @@ fun OvulationPrompt(logViewModel: LogViewModel, appViewModel: AppViewModel) {
                 bottom = 16.dp,
             ),
             modifier = Modifier
-                .height(270.dp),
+                .height(135.dp),
             content = {
                 items(flowSquares) { flowSquare ->
                     LogSelectableSquare(
