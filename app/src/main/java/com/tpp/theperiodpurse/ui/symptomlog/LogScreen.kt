@@ -99,11 +99,13 @@ fun LogScreen(
                 if (cramps != null && cramps.name == "None") {
                     cramps = null
                 }
+
                 calendarViewModel.setDayInfo(
                     day,
                     CalendarDayUIState(
                         flow = flow,
                         mood = logViewModel.getSelectedMood(),
+                        ovulating = logViewModel.getOvulation(),
                         exerciseLengthString = logViewModel.getText(LogPrompt.Exercise),
                         exerciseType = logViewModel.getSelectedExercise(),
                         crampSeverity = cramps,
@@ -142,6 +144,7 @@ fun LogScreen(
                             flow = logViewModel.getSquareSelected(LogPrompt.Flow)
                                 ?.let { FlowSeverity.getSeverityByDisplayName(it) },
                             mood = logViewModel.getSelectedMood(),
+                            ovulating = logViewModel.getOvulation(),
                             exerciseLength = exercisedDuration,
                             exerciseType = logViewModel.getSquareSelected(LogPrompt.Exercise)
                                 ?.let { Exercise.getExerciseByDisplayName(it) },

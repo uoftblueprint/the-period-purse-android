@@ -31,6 +31,17 @@ enum class LogPrompt(
         },
         prompt = { logViewModel, appViewModel -> FlowPrompt(logViewModel = logViewModel, appViewModel = appViewModel) },
     ),
+    Ovulation(
+        title = R.string.ovulation,
+        icon = { color ->
+            Icon(
+                painter = painterResource(R.drawable.ovulation_egg_24dp),
+                contentDescription = "Ovulation Icon",
+                tint = color,
+            )
+        },
+        prompt = { logViewModel, appViewModel -> OvulationPrompt(logViewModel = logViewModel, appViewModel = appViewModel) },
+    ),
     Mood(
         title = R.string.mood,
         icon = { color ->
@@ -159,7 +170,18 @@ open class LogSquare(
         promptTitle = R.string.period_flow,
         dataName = FlowSeverity.None.name,
     )
-
+    object Ovulating : LogSquare(
+        description = "Ovulating",
+        icon = { color ->
+            Icon(
+                painter = painterResource(R.drawable.ovulation_egg_24dp),
+                contentDescription = "Ovulating",
+                tint = color
+            )
+        },
+        promptTitle = R.string.ovulation,
+        dataName = Ovulation.Ovulating.name,
+    )
     object MoodHappy : LogSquare(
         description = "Happy",
         icon = {color ->
