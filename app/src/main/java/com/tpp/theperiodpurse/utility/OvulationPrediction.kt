@@ -1,7 +1,11 @@
 package com.tpp.theperiodpurse.utility
 
+import android.util.Log
 import com.tpp.theperiodpurse.data.model.Ovulation
 import com.tpp.theperiodpurse.data.entity.Date as TPPDate
+import java.time.LocalDate
+import java.time.ZoneId
+import java.util.Calendar
 
 
 /**
@@ -48,4 +52,39 @@ fun processDatesForOvulation(dates: ArrayList<TPPDate>): ArrayList<TPPDate> {
     // Filter for dates where ovulating is true and remove duplicates
     val filteredDates = dates.filter { it.ovulating == Ovulation.Ovulating }.distinctBy { it.date }
     return ArrayList(filteredDates)
+}
+
+
+fun predictOvulationDates(periodHistory: ArrayList<TPPDate>): List<LocalDate> {
+    val predictedOvulationDates = mutableListOf<LocalDate>()
+
+    val processedDates = processDates(periodHistory)
+    sortPeriodHistory(processedDates)
+
+    if (processedDates.isEmpty()) return predictedOvulationDates
+
+    val periodLength = calculateAveragePeriodLength(processedDates).toInt()
+
+    var ovulationLength = calculateAverageOvulationLength(periodHistory).toInt()
+    for (period in processedDates) {
+        val calendar = Calendar.getInstance()
+        calendar.time = period.date
+        calendar.add(Calendar.DAY_OF_MONTH, periodLength) // Move to end of period
+
+        // Now, add 14 days after period end for ovulation
+        if (ovulationLength == -1){
+            ovulationLength = 5;
+        }
+        calendar.add(Calendar.DAY_OF_MONTH, 14)
+
+        val ovulationStartDate = calendar.time.toInstant().atZone(ZoneId.systemDefault()).toLocalDate()
+        predictedOvulationDates.add(ovulationStartDate)
+
+        // If ovulation length is valid, add remaining ovulation days
+        for (i in 1 until ovulationLength) {
+            predictedOvulationDates.add(ovulationStartDate.plusDays(i.toLong()))
+        }
+    }
+
+    return predictedOvulationDates
 }

@@ -2,12 +2,14 @@ package com.tpp.theperiodpurse.ui.setting
 
 import android.Manifest
 import android.app.AlarmManager
+import android.app.NotificationManager
 import android.app.PendingIntent
 import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Build
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.annotation.RequiresApi
@@ -33,6 +35,7 @@ import androidx.core.content.ContextCompat
 import com.tpp.theperiodpurse.R
 import com.tpp.theperiodpurse.ui.onboarding.scaledSp
 import com.tpp.theperiodpurse.ui.viewmodel.AppViewModel
+import com.tpp.theperiodpurse.utility.NotificationHelper
 import com.tpp.theperiodpurse.utility.alarm.Alarm
 import com.tpp.theperiodpurse.utility.alarm.MonthlyAlarm
 import com.tpp.theperiodpurse.utility.alarm.WeeklyAlarm
@@ -56,6 +59,8 @@ class NotificationsScreen(private val appViewModel: AppViewModel) : ComponentAct
         super.onCreate(savedInstanceState)
         setContent {
             val context = LocalContext.current
+
+            com.tpp.theperiodpurse.utility.NotificationHelper.createNotificationChannel(context)
 
             // Check if the app has notification permission
             val hasNotificationPermission by remember {
@@ -85,6 +90,8 @@ fun temp() {
     // Placeholder function
 }
 
+
+
 /**
  * Composable function for displaying the notifications layout.
  *
@@ -99,6 +106,10 @@ fun NotificationsLayout(context: Context, hasNotificationsPermission: Boolean, a
     val formatter = DateTimeFormatter.ofPattern("h:mm a") // define the format of the input string
     var formattedTime = appViewModel.getReminderTime()
     var pickedTime = LocalTime.parse(formattedTime, formatter)
+
+    var ovulationNotificationsEnabled by remember {
+        mutableStateOf(appViewModel.getOvulationNotificationEnabled())
+    }
 
     appBar
 
@@ -126,9 +137,38 @@ fun NotificationsLayout(context: Context, hasNotificationsPermission: Boolean, a
         )
         Divider(color = Color.Gray, thickness = 0.7.dp)
         Expandable(appViewModel)
+
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(16.dp),
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            Text(
+                text = "Enable Ovulation Notifications",
+                modifier = Modifier.weight(1f),
+                fontSize = 18.scaledSp(),
+                fontWeight = FontWeight.Bold,
+                color = appViewModel.colorPalette.MainFontColor
+            )
+            Switch(
+                checked = ovulationNotificationsEnabled,
+                onCheckedChange = { isChecked ->
+                    ovulationNotificationsEnabled = isChecked
+                    appViewModel.setOvulationNotificationEnabled(isChecked)
+                    if (isChecked) {
+                        val periodHistory = ArrayList(appViewModel.getDates())
+                        NotificationHelper.sendOvulationNotification(context, periodHistory)
+                    }
+                }
+            )
+        }
+
+
         Divider(color = Color.Gray, thickness = 0.7.dp)
+
+
         TimePicker(timeDialogState, formattedTime)
-        Divider(color = Color.Gray, thickness = 0.7.dp)
     }
     MaterialDialog(
         dialogState = timeDialogState,
