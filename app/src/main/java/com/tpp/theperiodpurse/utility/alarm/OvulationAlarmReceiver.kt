@@ -1,10 +1,11 @@
+package com.tpp.theperiodpurse.utility.alarm
+
 import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
 import android.os.Build
 import android.util.Log
 import java.time.Instant
-import java.time.ZoneId
 import java.time.Duration
 import java.util.ArrayList
 import java.util.Date as JavaDate  // Alias java.util.Date
@@ -44,7 +45,7 @@ class OvulationAlarm : BroadcastReceiver() {
                             crampSeverity = CrampSeverity.None,  // Default: No cramps
                             sleep = Duration.ZERO,  // Default: No sleep recorded
                             notes = "",  // Empty notes
-                            ovulating = false  // Default: Not ovulating
+                            ovulating = null  // Default: Not ovulating
                         )
                     )
                 }

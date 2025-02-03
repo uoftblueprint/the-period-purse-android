@@ -51,7 +51,7 @@
                 <action android:name="APP_SPECIFIC_BROADCAST" />
             </intent-filter>
         </receiver>
-        <receiver android:name=".receiver.OvulationAlarm" android:exported="false"/>
+        <receiver android:name=".utility.alarm.OvulationAlarm" android:exported="false"/>
     </application>
 
 

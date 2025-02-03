@@ -1,6 +1,6 @@
 package com.tpp.theperiodpurse.utility
 
-import OvulationAlarm
+import com.tpp.theperiodpurse.utility.alarm.OvulationAlarm
 import android.app.AlarmManager
 import android.app.NotificationChannel
 import android.app.NotificationManager
@@ -14,7 +14,6 @@ import androidx.core.app.NotificationCompat
 import com.tpp.theperiodpurse.R
 import com.tpp.theperiodpurse.data.entity.Date
 import java.time.LocalDate
-import java.time.ZoneId
 import java.util.Calendar
 
 object NotificationHelper {
@@ -33,8 +32,6 @@ object NotificationHelper {
                 context.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
             notificationManager.createNotificationChannel(channel)
             Log.d("NotificationManager", "Notification channel created: $OVULATION_CHANNEL_ID")
-        } else {
-            Log.d("NotificationManager", "No need to create notification channel for SDK < O.")
         }
     }
 
@@ -57,27 +54,34 @@ object NotificationHelper {
         val today = LocalDate.now()
         Log.d("NotificationManager", "Today’s Date: $today") // ADD THIS
 
-        if (predictedOvulationDates.contains(today)) {
-            Log.d("NotificationManager", "Ovulation Day Matched! Sending Notification.") // ADD THIS
+        // Check if today falls within the ovulation window
+        val ovulationStart = predictedOvulationDates.firstOrNull()
+        val ovulationEnd = predictedOvulationDates.lastOrNull()
+
+        if (ovulationStart != null && ovulationEnd != null && today in ovulationStart..ovulationEnd) {
+            Log.d("NotificationManager", "Ovulation Phase Active! Sending Notification.")
+
+            val notificationText =
+                "Your ovulation phase is active from $ovulationStart to $ovulationEnd. Log your symptoms!"
 
             val notification = NotificationCompat.Builder(context, OVULATION_CHANNEL_ID)
                 .setSmallIcon(R.drawable.app_logo)
                 .setContentTitle("Ovulation Phase Reminder")
-                .setContentText("Your ovulation phase has begun. Don't forget to log your symptoms!")
+                .setContentText(notificationText)
                 .setPriority(NotificationCompat.PRIORITY_HIGH)
                 .setAutoCancel(true)
                 .build()
 
             notificationManager.notify(1, notification)
-            Log.d("NotificationManager", "Ovulation notification sent for $today") // ADD THIS
+            Log.d("NotificationManager", "Ovulation notification sent for $today")
         } else {
-            Log.d("NotificationManager", "Today is NOT an ovulation day.") // ADD THIS
+            Log.d("NotificationManager", "Today is NOT an ovulation day.")
         }
     }
 
     @RequiresApi(Build.VERSION_CODES.S)
     fun scheduleOvulationAlarms(context: Context, periodHistory: ArrayList<Date>) {
-        val predictedOvulationDates = predictOvulationDates(periodHistory)
+        val predictedOvulationDates =  predictOvulationDates(periodHistory)
         if (predictedOvulationDates.isEmpty()) {
             Log.e("AlarmManager", "No ovulation dates available for alarm.")
             return
