@@ -63,27 +63,29 @@ fun predictOvulationDates(periodHistory: ArrayList<TPPDate>): List<LocalDate> {
 
     if (processedDates.isEmpty()) return predictedOvulationDates
 
-    val periodLength = calculateAveragePeriodLength(processedDates).toInt()
-
     var ovulationLength = calculateAverageOvulationLength(periodHistory).toInt()
+    Log.d("ovulation", ovulationLength.toString());
+    if (ovulationLength == -1){
+        ovulationLength = 5;
+    }
+    Log.d("ovulation after", ovulationLength.toString());
     for (period in processedDates) {
         val calendar = Calendar.getInstance()
         calendar.time = period.date
-        calendar.add(Calendar.DAY_OF_MONTH, periodLength) // Move to end of period
 
         // Now, add 14 days after period end for ovulation
-        if (ovulationLength == -1){
-            ovulationLength = 5;
-        }
+
         calendar.add(Calendar.DAY_OF_MONTH, 14)
 
-        val ovulationStartDate = calendar.time.toInstant().atZone(ZoneId.systemDefault()).toLocalDate()
-        predictedOvulationDates.add(ovulationStartDate)
+        val ovulationStartDate =
+            calendar.time.toInstant().atZone(ZoneId.systemDefault()).toLocalDate()
+        //predictedOvulationDates.add(ovulationStartDate)
 
         // If ovulation length is valid, add remaining ovulation days
-        for (i in 1 until ovulationLength) {
+        for (i in 0 until ovulationLength) {
             predictedOvulationDates.add(ovulationStartDate.plusDays(i.toLong()))
         }
+        break
     }
 
     return predictedOvulationDates

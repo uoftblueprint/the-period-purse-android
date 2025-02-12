@@ -1,5 +1,6 @@
 package com.tpp.theperiodpurse.ui.cycle
 
+import android.util.Log
 import androidx.compose.foundation.*
 import androidx.compose.foundation.layout.*
 import androidx.compose.runtime.Composable
@@ -61,15 +62,22 @@ fun CycleScreenLayout(
                 .fillMaxHeight()
                 .padding(horizontal = 20.dp, vertical = 25.dp),
         ) {
-            // if next predicted <= 7 days
-            if (daysUntilNextPeriod <= 7) {
-                if (daysUntilNextPeriod <= 0) {
-                    UpcomingPeriodBox("You period will likely come any day now!",
-                        appViewModel = appViewModel)
-                } else {
-                    UpcomingPeriodBox("You period might be coming in the next " +
-                        "$daysUntilNextPeriod days",
-                        appViewModel = appViewModel)
+            Log.d("days until period", daysUntilNextPeriod.toString())
+            if (daysUntilNextPeriod > -1) {
+                // if next predicted <= 7 days
+                if (daysUntilNextPeriod <= 7) {
+                    if (daysUntilNextPeriod <= 0) {
+                        UpcomingPeriodBox(
+                            "You period will likely come any day now!",
+                            appViewModel = appViewModel
+                        )
+                    } else {
+                        UpcomingPeriodBox(
+                            "You period might be coming in the next " +
+                                    "$daysUntilNextPeriod days",
+                            appViewModel = appViewModel
+                        )
+                    }
                 }
             }
             Spacer(modifier.height(15.dp))
