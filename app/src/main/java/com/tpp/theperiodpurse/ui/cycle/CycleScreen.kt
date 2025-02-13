@@ -63,7 +63,7 @@ fun CycleScreenLayout(
                 .padding(horizontal = 20.dp, vertical = 25.dp),
         ) {
             Log.d("days until period", daysUntilNextPeriod.toString())
-            if (daysUntilNextPeriod > -1) {
+            if (cycleLength > -1) {
                 // if next predicted <= 7 days
                 if (daysUntilNextPeriod <= 7) {
                     if (daysUntilNextPeriod <= 0) {
