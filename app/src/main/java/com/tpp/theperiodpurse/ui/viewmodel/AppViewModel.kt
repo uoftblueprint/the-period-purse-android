@@ -1,6 +1,8 @@
 package com.tpp.theperiodpurse.ui.viewmodel
 
 import android.content.Context
+import android.content.SharedPreferences
+
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -27,6 +29,7 @@ import javax.inject.Inject
 class AppViewModel @Inject constructor(
     private val userRepository: UserRepository,
     private val dateRepository: DateRepository,
+    private val context: Context,
 ) : ViewModel() {
     private val _uiState = MutableStateFlow(AppUiState())
     var colorPalette: ColorPalette = if (_uiState.value.darkMode == true){
@@ -36,6 +39,9 @@ class AppViewModel @Inject constructor(
     }
     val uiState: StateFlow<AppUiState> = _uiState.asStateFlow()
     var databaseIsLoadedFromStorage: MutableLiveData<Boolean?> = MutableLiveData(null)
+    // Initialize shared preferences
+    private val sharedPreferences: SharedPreferences =
+        context.getSharedPreferences("app_preferences", Context.MODE_PRIVATE)
 
     fun loadData(calendarViewModel: CalendarViewModel, context: Context) {
         val trackedSymptoms: MutableList<Symptom> = mutableListOf()
@@ -186,6 +192,18 @@ class AppViewModel @Inject constructor(
     fun getReminderFreq(): String {
         return uiState.value.reminderFrequency
     }
+
+
+    fun getOvulationNotificationEnabled(): Boolean {
+        // Retrieve the state from shared preferences or database
+        return sharedPreferences.getBoolean("ovulation_notifications", false)
+    }
+
+    fun setOvulationNotificationEnabled(enabled: Boolean) {
+        // Save the state in shared preferences or database
+        sharedPreferences.edit().putBoolean("ovulation_notifications", enabled).apply()
+    }
+
 
     fun saveDate(date: Date, context: Context) {
         dateRepository.addDate(date, context)
