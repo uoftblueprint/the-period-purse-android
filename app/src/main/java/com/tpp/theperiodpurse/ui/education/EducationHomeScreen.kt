@@ -185,7 +185,7 @@ fun PeriodProducts(navController: NavHostController, it: Product, appViewModel: 
         onClick = {
             navController.currentBackStackEntry?.savedStateHandle?.set(
                 key = "elementId",
-                value = it.ProductName,
+                value = it.productName,
             )
             navController.navigate(EducationNavigation.ProductInfo.name)
         },
@@ -214,7 +214,7 @@ fun PeriodProducts(navController: NavHostController, it: Product, appViewModel: 
                 textAlign = TextAlign.Center,
                 fontWeight = Bold,
                 fontSize = 18.scaledSp(),
-                text = it.ProductName,
+                text = it.productName,
             )
         }
     }
