@@ -73,7 +73,7 @@ fun predictOvulationDates(periodHistory: ArrayList<TPPDate>): List<LocalDate> {
         val calendar = Calendar.getInstance()
         calendar.time = period.date
 
-        // Now, add 14 days after period end for ovulation
+        // Now, add 14 days after period start for ovulation
 
         calendar.add(Calendar.DAY_OF_MONTH, 14)
 
