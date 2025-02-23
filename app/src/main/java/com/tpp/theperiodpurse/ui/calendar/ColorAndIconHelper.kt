@@ -18,10 +18,6 @@ fun getDayColorAndIcon(
         return default
     }
 
-    // TODO Joel
-    // if (activeSymptom != Symptom.FLOW && calendarDayUIState.flow == FlowSeverity.Predicted) {
-    // }
-
     return when (activeSymptom) {
         Symptom.FLOW -> flowOptions(calendarDayUIState, default)
         Symptom.CRAMPS -> crampOptions(calendarDayUIState, default)

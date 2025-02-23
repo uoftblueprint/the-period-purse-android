@@ -21,11 +21,13 @@ import com.kizitonwose.calendar.core.firstDayOfWeekFromLocale
 import com.tpp.theperiodpurse.R
 import com.tpp.theperiodpurse.utility.getPeriodPrediction
 import com.tpp.theperiodpurse.data.model.FlowSeverity
+import com.tpp.theperiodpurse.data.model.Ovulation
 import com.tpp.theperiodpurse.data.model.Symptom
 import com.tpp.theperiodpurse.ui.calendar.components.SymptomTab
 import com.tpp.theperiodpurse.ui.state.CalendarDayUIState
 import com.tpp.theperiodpurse.ui.viewmodel.AppViewModel
 import com.tpp.theperiodpurse.ui.viewmodel.CalendarViewModel
+import com.tpp.theperiodpurse.utility.predictOvulationDates
 import java.time.YearMonth
 import java.time.ZoneId
 
@@ -63,6 +65,7 @@ fun CalendarScreenLayout(
     // clear out days previous predicted
     if (dates.isNotEmpty()) {
         val predictedPeriodDates = getPeriodPrediction(ArrayList(appViewModel.getDates()))
+        val predictedOvulationDates = predictOvulationDates(ArrayList(appViewModel.getDates()))
 
         // update the color for these dates
         predictedPeriodDates.forEach{
@@ -70,6 +73,10 @@ fun CalendarScreenLayout(
             if (localDate != null) {
                 calendarViewModel.setDayInfo(localDate, CalendarDayUIState(FlowSeverity.Predicted))
             }
+        }
+
+        predictedOvulationDates.forEach{
+            calendarViewModel.setDayInfo(it, CalendarDayUIState(null, ovulating = Ovulation.Predicted))
         }
     }
 

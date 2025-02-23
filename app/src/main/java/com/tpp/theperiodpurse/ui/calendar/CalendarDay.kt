@@ -6,6 +6,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import com.kizitonwose.calendar.core.CalendarDay
 import com.tpp.theperiodpurse.data.model.FlowSeverity
+import com.tpp.theperiodpurse.data.model.Ovulation
 import com.tpp.theperiodpurse.data.model.Symptom
 import com.tpp.theperiodpurse.ui.calendar.components.Day
 import com.tpp.theperiodpurse.ui.state.CalendarDayUIState
@@ -23,6 +24,8 @@ fun CalendarDay(
     appViewModel: AppViewModel
 ) {
     val (dayColor, iconId) = getDayColorAndIcon(activeSymptom, calendarDayUIState, appViewModel)
-    val isPredicted = calendarDayUIState?.flow == FlowSeverity.Predicted
+    val isPredicted =
+        (activeSymptom == Symptom.FLOW && calendarDayUIState?.flow == FlowSeverity.Predicted) ||
+        (activeSymptom == Symptom.OVULATION && calendarDayUIState?.ovulating == Ovulation.Predicted)
     Day(day.date, dayColor, iconId, onClick, modifier, isPredicted)
 }
