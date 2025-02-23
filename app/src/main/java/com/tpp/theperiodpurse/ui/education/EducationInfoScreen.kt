@@ -29,7 +29,6 @@ import com.tpp.theperiodpurse.ui.datasource.*
 import com.tpp.theperiodpurse.ui.onboarding.scaledSp
 import com.tpp.theperiodpurse.ui.theme.Teal
 import com.tpp.theperiodpurse.ui.viewmodel.AppViewModel
-
 @Composable
 fun EducationInfoScreen(
     appViewModel: AppViewModel,
@@ -70,18 +69,23 @@ fun EducationInfoScreen(
             color = appViewModel.colorPalette.MainFontColor
         )
 
-        // Group content into steps
+        // Track step number
         var stepNumber = 1
-        val groupedBlocks = product.descriptionBlocks.chunked(2) // Groups items in pairs
 
-        groupedBlocks.forEach { group ->
-            // Step number indicator at the top of each group
-            StepIndicator(stepNumber)
-            stepNumber++
+        // Iterate through description blocks
+        product.descriptionBlocks.forEach { block ->
+            when (block) {
+                is TextBlock -> {
+                    if (block.text == "With Applicator" || block.text == "Without Applicator") {
+                        // Handle special indicator style
+                        ApplicatorIndicator(block.text)
 
-            group.forEach { block ->
-                when (block) {
-                    is TextBlock -> {
+                        // Reset step number to 1 if "Without Applicator" is encountered
+                        if (block.text == "Without Applicator") {
+                            stepNumber = 1
+                        }
+                    } else {
+                        // Regular text block (part of a step)
                         Text(
                             modifier = Modifier.padding(12.dp),
                             textAlign = TextAlign.Center,
@@ -90,21 +94,24 @@ fun EducationInfoScreen(
                             color = appViewModel.colorPalette.MainFontColor
                         )
                     }
-                    is ImageBlock -> {
-                        // Wrap the Image in a Box to center it horizontally
-                        Box(
-                            modifier = Modifier
-                                .fillMaxWidth()
-                                .padding(vertical = 8.dp),
-                            contentAlignment = Alignment.Center
-                        ) {
-                            Image(
-                                painter = painterResource(id = block.imageResId),
-                                contentDescription = null,
-                                modifier = Modifier
-                                    .fillMaxWidth(0.8f) // Adjust width if needed
-                            )
-                        }
+                }
+                is ImageBlock -> {
+                    // Start a new step for each image block
+                    StepIndicator(stepNumber)
+                    stepNumber++
+
+                    // Display the image
+                    Box(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(vertical = 8.dp),
+                        contentAlignment = Alignment.Center
+                    ) {
+                        Image(
+                            painter = painterResource(id = block.imageResId),
+                            contentDescription = null,
+                            modifier = Modifier.fillMaxWidth(0.8f)
+                        )
                     }
                 }
             }
@@ -113,6 +120,25 @@ fun EducationInfoScreen(
         Spacer(modifier = Modifier.height(50.dp))
     }
 }
+@Composable
+fun ApplicatorIndicator(label: String) {
+    Box(
+        modifier = Modifier
+            .clip(CircleShape)
+            .background(Teal)
+            .padding(horizontal = 16.dp, vertical = 8.dp),
+        contentAlignment = Alignment.Center
+    ) {
+        Text(
+            text = label,
+            fontSize = 16.sp,
+            color = Color.White,
+            fontWeight = FontWeight.Bold
+        )
+    }
+    Spacer(modifier = Modifier.height(8.dp)) // Space below the indicator
+}
+
 
 @Composable
 fun StepIndicator(stepNumber: Int) {
