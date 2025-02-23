@@ -23,6 +23,6 @@ fun CalendarDay(
     appViewModel: AppViewModel
 ) {
     val (dayColor, iconId) = getDayColorAndIcon(activeSymptom, calendarDayUIState, appViewModel)
-    val isPredicted = calendarDayUIState?.flow == FlowSeverity.Predicted
+    val isPredicted = activeSymptom == Symptom.FLOW && calendarDayUIState?.flow == FlowSeverity.Predicted
     Day(day.date, dayColor, iconId, onClick, modifier, isPredicted)
 }
