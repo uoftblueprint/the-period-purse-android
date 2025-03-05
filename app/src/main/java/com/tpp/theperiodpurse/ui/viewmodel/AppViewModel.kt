@@ -99,6 +99,7 @@ class AppViewModel @Inject constructor(
                 date.date.toInstant().atZone(ZoneId.systemDefault()).toLocalDate(),
                 CalendarDayUIState(
                     flow = date.flow,
+                    ovulating = date.ovulating,
                     mood = date.mood,
                     exerciseLengthString = convertedExcLen,
                     exerciseType = date.exerciseType,
