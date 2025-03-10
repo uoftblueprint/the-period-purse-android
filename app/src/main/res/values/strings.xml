@@ -17,7 +17,7 @@
     <string name="choose_date">Choose date</string>
     <string name="question_three">What symptoms do you want to track?</string>
     <string name="description_three">You can change these anytime in yours settings.</string>
-    <string name="caption_three">By default, we will always track your period flow. Choose up to four other symptoms to track.</string>
+    <string name="caption_three">By default, we will always track your period flow. Choose up to five other symptoms to track.</string>
     <string name="mood">Mood</string>
     <string name="exercise">Exercise</string>
     <string name="cramps">Cramps</string>
