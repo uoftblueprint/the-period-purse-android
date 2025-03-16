@@ -6,7 +6,8 @@ enum class FlowSeverity(val displayName: String) {
     Heavy("Heavy"),
     Spotting("Spotting"),
     None("None"),
-    Predicted("Predicted")
+    Predicted("Predicted"),
+    Ovulation(displayName = "Ovulation")
     ;
 
     companion object {

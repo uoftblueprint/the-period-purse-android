@@ -38,6 +38,7 @@ private fun flowOptions(calendarDayUIState: CalendarDayUIState, default: Pair<Co
         FlowSeverity.Heavy -> Pair(Color(0xFFC33232), R.drawable.flow_heavy)
         FlowSeverity.Spotting -> Pair(Color(0xFFF5C0C0), R.drawable.spotting)
         FlowSeverity.Predicted -> Pair(Color(0xFFEEC6FE), R.drawable.blank)
+        FlowSeverity.Ovulation -> Pair(Color(0xFF55AD9E), R.drawable.blank)
         FlowSeverity.None, null -> default
     }
 }
