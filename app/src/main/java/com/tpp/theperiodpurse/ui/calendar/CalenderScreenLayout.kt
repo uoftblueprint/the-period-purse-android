@@ -76,7 +76,8 @@ fun CalendarScreenLayout(
         }
 
         predictedOvulationDates.forEach{
-            calendarViewModel.setDayInfo(it, CalendarDayUIState(null, ovulating = Ovulation.Predicted))
+            calendarViewModel.setDayInfo(it, CalendarDayUIState(flow = FlowSeverity.Ovulation, ovulating = Ovulation.Predicted))
+            //calendarViewModel.setDayInfo(it, CalendarDayUIState(null, ovulating = Ovulation.Predicted))
         }
     }
 
