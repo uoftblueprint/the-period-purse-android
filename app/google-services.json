@@ -12,7 +12,12 @@
           "package_name": "com.tpp.app"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "741032515642-gfkh6984qlj4sj0ceit0tp6cb5ph7e4n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyAy99lzf8wgMoP7tW7etg_vYf7iS3Fpi7I"
@@ -20,7 +25,12 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "741032515642-gfkh6984qlj4sj0ceit0tp6cb5ph7e4n.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         }
       }
     }
