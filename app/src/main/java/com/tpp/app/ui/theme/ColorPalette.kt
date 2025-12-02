@@ -1,8 +1,8 @@
-package com.theperiodpurse.app.ui.theme
+package com.tpp.app.ui.theme
 
 import androidx.compose.ui.graphics.Color
-import com.theperiodpurse.app.R
-import com.theperiodpurse.app.ui.education.pink
+import com.tpp.app.R
+import com.tpp.app.ui.education.pink
 
 
 interface ColorPalette {

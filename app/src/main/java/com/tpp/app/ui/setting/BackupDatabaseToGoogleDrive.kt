@@ -1,4 +1,4 @@
-package com.theperiodpurse.app.ui.setting
+package com.tpp.app.ui.setting
 
 import android.content.Context
 import android.os.Build
@@ -9,11 +9,11 @@ import androidx.compose.runtime.*
 import androidx.compose.runtime.livedata.observeAsState
 import androidx.navigation.NavHostController
 import com.google.android.gms.auth.api.signin.GoogleSignIn
-import com.theperiodpurse.app.ui.component.LoadingScreen
-import com.theperiodpurse.app.ui.component.handleError
-import com.theperiodpurse.app.ui.viewmodel.AppViewModel
-import com.theperiodpurse.app.ui.viewmodel.OnboardViewModel
-import com.theperiodpurse.app.utility.validateUserAuthenticationAndAuthorization
+import com.tpp.app.ui.component.LoadingScreen
+import com.tpp.app.ui.component.handleError
+import com.tpp.app.ui.viewmodel.AppViewModel
+import com.tpp.app.ui.viewmodel.OnboardViewModel
+import com.tpp.app.utility.validateUserAuthenticationAndAuthorization
 
 // TODO Figure out why sometimes database is not backed up
 @RequiresApi(Build.VERSION_CODES.O)

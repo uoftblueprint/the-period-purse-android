@@ -1,7 +1,7 @@
-package com.theperiodpurse.app.data
+package com.tpp.app.data
 
 import androidx.room.*
-import com.theperiodpurse.app.data.entity.Date
+import com.tpp.app.data.entity.Date
 import kotlinx.coroutines.flow.Flow
 
 @Dao

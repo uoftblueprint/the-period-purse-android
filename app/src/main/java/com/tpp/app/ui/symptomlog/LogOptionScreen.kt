@@ -1,4 +1,4 @@
-package com.theperiodpurse.app.ui.symptomlog
+package com.tpp.app.ui.symptomlog
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -17,10 +17,10 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Popup
-import com.theperiodpurse.app.R
-import com.theperiodpurse.app.ui.onboarding.scaledSp
-import com.theperiodpurse.app.ui.theme.Red
-import com.theperiodpurse.app.ui.viewmodel.AppViewModel
+import com.tpp.app.R
+import com.tpp.app.ui.onboarding.scaledSp
+import com.tpp.app.ui.theme.Red
+import com.tpp.app.ui.viewmodel.AppViewModel
 
 @Composable
 fun LoggingOptionsPopup(

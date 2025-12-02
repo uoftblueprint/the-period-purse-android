@@ -1,14 +1,14 @@
-package com.theperiodpurse.app.ui.cycle.components
+package com.tpp.app.ui.cycle.components
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.res.stringResource
-import com.theperiodpurse.app.R
-import com.theperiodpurse.app.utility.addOneDay
-import com.theperiodpurse.app.data.entity.Date
-import com.theperiodpurse.app.ui.onboarding.scaledSp
-import com.theperiodpurse.app.ui.viewmodel.AppViewModel
+import com.tpp.app.R
+import com.tpp.app.utility.addOneDay
+import com.tpp.app.data.entity.Date
+import com.tpp.app.ui.onboarding.scaledSp
+import com.tpp.app.ui.viewmodel.AppViewModel
 import java.text.SimpleDateFormat
 import java.time.LocalDate
 import java.time.ZoneId

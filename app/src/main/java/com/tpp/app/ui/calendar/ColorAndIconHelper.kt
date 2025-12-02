@@ -1,10 +1,10 @@
-package com.theperiodpurse.app.ui.calendar
+package com.tpp.app.ui.calendar
 
 import androidx.compose.ui.graphics.Color
-import com.theperiodpurse.app.R
-import com.theperiodpurse.app.data.model.*
-import com.theperiodpurse.app.ui.state.CalendarDayUIState
-import com.theperiodpurse.app.ui.viewmodel.AppViewModel
+import com.tpp.app.R
+import com.tpp.app.data.model.*
+import com.tpp.app.ui.state.CalendarDayUIState
+import com.tpp.app.ui.viewmodel.AppViewModel
 
 fun getDayColorAndIcon(
     activeSymptom: Symptom,

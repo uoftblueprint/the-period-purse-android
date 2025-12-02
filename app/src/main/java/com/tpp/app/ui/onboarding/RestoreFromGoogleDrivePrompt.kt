@@ -1,4 +1,4 @@
-package com.theperiodpurse.app.ui.onboarding
+package com.tpp.app.ui.onboarding
 
 import android.accounts.Account
 import android.content.Context
@@ -17,10 +17,10 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
-import com.theperiodpurse.app.OnboardingScreen
-import com.theperiodpurse.app.ui.component.LoadingScreen
-import com.theperiodpurse.app.ui.viewmodel.AppViewModel
-import com.theperiodpurse.app.ui.viewmodel.OnboardViewModel
+import com.tpp.app.OnboardingScreen
+import com.tpp.app.ui.component.LoadingScreen
+import com.tpp.app.ui.viewmodel.AppViewModel
+import com.tpp.app.ui.viewmodel.OnboardViewModel
 
 @RequiresApi(Build.VERSION_CODES.O)
 @Composable

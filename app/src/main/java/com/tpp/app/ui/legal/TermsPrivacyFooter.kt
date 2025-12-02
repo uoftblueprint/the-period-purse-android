@@ -1,4 +1,4 @@
-package com.theperiodpurse.app.ui.legal
+package com.tpp.app.ui.legal
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
@@ -18,8 +18,8 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
-import com.theperiodpurse.app.LegalScreen
-import com.theperiodpurse.app.ui.onboarding.scaledSp
+import com.tpp.app.LegalScreen
+import com.tpp.app.ui.onboarding.scaledSp
 
 @Composable
 fun TermsAndPrivacyFooter(navController: NavHostController, textColor: Color) {

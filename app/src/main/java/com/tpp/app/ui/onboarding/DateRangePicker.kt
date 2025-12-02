@@ -1,4 +1,4 @@
-package com.theperiodpurse.app.ui.onboarding
+package com.tpp.app.ui.onboarding
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
@@ -18,8 +18,8 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.zIndex
-import com.theperiodpurse.app.ui.state.OnboardUIState
-import com.theperiodpurse.app.ui.viewmodel.OnboardViewModel
+import com.tpp.app.ui.state.OnboardUIState
+import com.tpp.app.ui.viewmodel.OnboardViewModel
 import java.time.Instant
 import java.time.LocalDate
 import java.time.ZoneOffset

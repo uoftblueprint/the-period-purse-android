@@ -1,4 +1,4 @@
-package com.theperiodpurse.app.ui.symptomlog
+package com.tpp.app.ui.symptomlog
 
 import android.util.Log
 import androidx.compose.foundation.clickable
@@ -23,11 +23,11 @@ import androidx.compose.ui.platform.LocalSoftwareKeyboardController
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.VisualTransformation
-import com.theperiodpurse.app.data.model.LogPrompt
-import com.theperiodpurse.app.ui.theme.LogSelectedTextColor
-import com.theperiodpurse.app.ui.theme.MainFontColor
-import com.theperiodpurse.app.ui.viewmodel.AppViewModel
-import com.theperiodpurse.app.ui.viewmodel.LogViewModel
+import com.tpp.app.data.model.LogPrompt
+import com.tpp.app.ui.theme.LogSelectedTextColor
+import com.tpp.app.ui.theme.MainFontColor
+import com.tpp.app.ui.viewmodel.AppViewModel
+import com.tpp.app.ui.viewmodel.LogViewModel
 
 @OptIn(ExperimentalComposeUiApi::class)
 @Composable

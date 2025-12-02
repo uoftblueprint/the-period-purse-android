@@ -1,4 +1,4 @@
-package com.theperiodpurse.app.ui.setting
+package com.tpp.app.ui.setting
 
 import android.Manifest
 import android.Manifest.permission.SCHEDULE_EXACT_ALARM
@@ -31,13 +31,13 @@ import androidx.compose.ui.unit.dp
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
-import com.theperiodpurse.app.R
-import com.theperiodpurse.app.data.model.Symptom
-import com.theperiodpurse.app.ui.component.SocialMedia
-import com.theperiodpurse.app.ui.legal.TermsAndPrivacyFooter
-import com.theperiodpurse.app.ui.onboarding.scaledSp
-import com.theperiodpurse.app.ui.theme.Teal
-import com.theperiodpurse.app.ui.viewmodel.AppViewModel
+import com.tpp.app.R
+import com.tpp.app.data.model.Symptom
+import com.tpp.app.ui.component.SocialMedia
+import com.tpp.app.ui.legal.TermsAndPrivacyFooter
+import com.tpp.app.ui.onboarding.scaledSp
+import com.tpp.app.ui.theme.Teal
+import com.tpp.app.ui.viewmodel.AppViewModel
 
 /**
  * Displays the layout for the settings screen.

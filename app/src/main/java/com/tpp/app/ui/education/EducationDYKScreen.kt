@@ -1,4 +1,4 @@
-package com.theperiodpurse.app.ui.education
+package com.tpp.app.ui.education
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
@@ -19,12 +19,12 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
-import com.theperiodpurse.app.R
-import com.theperiodpurse.app.ui.onboarding.scaledSp
-import com.theperiodpurse.app.ui.theme.Teal
-import com.theperiodpurse.app.utility.getFact
-import com.theperiodpurse.app.utility.setFact
-import com.theperiodpurse.app.ui.viewmodel.AppViewModel
+import com.tpp.app.R
+import com.tpp.app.ui.onboarding.scaledSp
+import com.tpp.app.ui.theme.Teal
+import com.tpp.app.utility.getFact
+import com.tpp.app.utility.setFact
+import com.tpp.app.ui.viewmodel.AppViewModel
 
 @Composable
 fun EducationDYKScreen(navController: NavHostController, appViewModel: AppViewModel) {

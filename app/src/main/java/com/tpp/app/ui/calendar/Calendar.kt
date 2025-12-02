@@ -1,4 +1,4 @@
-package com.theperiodpurse.app.ui.calendar
+package com.tpp.app.ui.calendar
 
 import android.os.Build
 import androidx.annotation.RequiresApi
@@ -13,11 +13,11 @@ import androidx.navigation.NavController
 import com.kizitonwose.calendar.compose.CalendarState
 import com.kizitonwose.calendar.compose.VerticalCalendar
 import com.kizitonwose.calendar.core.DayPosition
-import com.theperiodpurse.app.data.model.Symptom
-import com.theperiodpurse.app.navigateToLogScreenWithDate
-import com.theperiodpurse.app.ui.calendar.components.MonthHeader
-import com.theperiodpurse.app.ui.state.CalendarUIState
-import com.theperiodpurse.app.ui.viewmodel.AppViewModel
+import com.tpp.app.data.model.Symptom
+import com.tpp.app.navigateToLogScreenWithDate
+import com.tpp.app.ui.calendar.components.MonthHeader
+import com.tpp.app.ui.state.CalendarUIState
+import com.tpp.app.ui.viewmodel.AppViewModel
 
 @RequiresApi(Build.VERSION_CODES.O)
 @Composable

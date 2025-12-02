@@ -1,4 +1,4 @@
-package com.theperiodpurse.app.ui.calendar
+package com.tpp.app.ui.calendar
 
 import android.os.Build
 import androidx.annotation.RequiresApi

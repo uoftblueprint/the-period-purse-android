@@ -1,4 +1,4 @@
-package com.theperiodpurse.app
+package com.tpp.app
 
 import android.app.Application
 import dagger.hilt.android.HiltAndroidApp

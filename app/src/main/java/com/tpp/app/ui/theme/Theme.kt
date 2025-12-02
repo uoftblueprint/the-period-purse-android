@@ -1,4 +1,4 @@
-package com.theperiodpurse.app.ui.theme
+package com.tpp.app.ui.theme
 
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.lightColors
@@ -7,7 +7,7 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.graphics.Color
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
-import com.theperiodpurse.app.ui.viewmodel.AppViewModel
+import com.tpp.app.ui.viewmodel.AppViewModel
 
 val LightColorPalette = lightColors(
     primary = Purple500,

@@ -9,7 +9,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:941432711682:android:c987af18ea56ebfcd8151b",
         "android_client_info": {
-          "package_name": "com.tpp.theperiodpurse"
+          "package_name": "com.tpp.app"
         }
       },
       "oauth_client": [
@@ -17,7 +17,7 @@
           "client_id": "941432711682-e648chv0m2h1ibt3rfp36fpco67lebi4.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.tpp.theperiodpurse",
+            "package_name": "com.tpp.app",
             "certificate_hash": "9530ca5d378bc848254e8ff14511ffe6f91b5bd3"
           }
         },

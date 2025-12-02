@@ -1,9 +1,9 @@
-package com.theperiodpurse.app.data.module
+package com.tpp.app.data.module
 
 import android.content.Context
-import com.theperiodpurse.app.data.ApplicationRoomDatabase
-import com.theperiodpurse.app.data.DateDAO
-import com.theperiodpurse.app.data.UserDAO
+import com.tpp.app.data.ApplicationRoomDatabase
+import com.tpp.app.data.DateDAO
+import com.tpp.app.data.UserDAO
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

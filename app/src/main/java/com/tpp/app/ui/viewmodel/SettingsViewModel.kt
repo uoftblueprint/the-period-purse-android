@@ -1,8 +1,8 @@
-package com.theperiodpurse.app.ui.viewmodel
+package com.tpp.app.ui.viewmodel
 
 import androidx.lifecycle.ViewModel
-import com.theperiodpurse.app.data.model.Symptom
-import com.theperiodpurse.app.ui.state.SettingsUIState
+import com.tpp.app.data.model.Symptom
+import com.tpp.app.ui.state.SettingsUIState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow

@@ -1,4 +1,4 @@
-package com.theperiodpurse.app.ui.legal
+package com.tpp.app.ui.legal
 
 import android.annotation.SuppressLint
 import androidx.compose.foundation.interaction.MutableInteractionSource
@@ -15,10 +15,10 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
-import com.theperiodpurse.app.R
-import com.theperiodpurse.app.ui.component.TopNavBar
-import com.theperiodpurse.app.ui.education.EducationBackground
-import com.theperiodpurse.app.ui.viewmodel.AppViewModel
+import com.tpp.app.R
+import com.tpp.app.ui.component.TopNavBar
+import com.tpp.app.ui.education.EducationBackground
+import com.tpp.app.ui.viewmodel.AppViewModel
 
 @SuppressLint("UnusedMaterialScaffoldPaddingParameter")
 @Composable

@@ -1,4 +1,4 @@
-package com.theperiodpurse.app
+package com.tpp.app
 
 import android.content.Context
 import android.content.Intent
@@ -17,21 +17,21 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.navArgument
-import com.theperiodpurse.app.data.*
-import com.theperiodpurse.app.ui.calendar.CalendarScreen
-import com.theperiodpurse.app.ui.cycle.CycleScreenLayout
-import com.theperiodpurse.app.ui.cycle.PeriodHistoryLayout
-import com.theperiodpurse.app.ui.education.*
-import com.theperiodpurse.app.ui.legal.PrivacyScreen
-import com.theperiodpurse.app.ui.legal.TermsScreen
-import com.theperiodpurse.app.ui.onboarding.*
-import com.theperiodpurse.app.ui.onboarding.SummaryScreen
-import com.theperiodpurse.app.ui.setting.SettingsScreen
-import com.theperiodpurse.app.ui.symptomlog.LogMultipleDatesScreen
-import com.theperiodpurse.app.ui.symptomlog.LogScreen
-import com.theperiodpurse.app.ui.viewmodel.AppViewModel
-import com.theperiodpurse.app.ui.viewmodel.CalendarViewModel
-import com.theperiodpurse.app.ui.viewmodel.OnboardViewModel
+import com.tpp.app.data.*
+import com.tpp.app.ui.calendar.CalendarScreen
+import com.tpp.app.ui.cycle.CycleScreenLayout
+import com.tpp.app.ui.cycle.PeriodHistoryLayout
+import com.tpp.app.ui.education.*
+import com.tpp.app.ui.legal.PrivacyScreen
+import com.tpp.app.ui.legal.TermsScreen
+import com.tpp.app.ui.onboarding.*
+import com.tpp.app.ui.onboarding.SummaryScreen
+import com.tpp.app.ui.setting.SettingsScreen
+import com.tpp.app.ui.symptomlog.LogMultipleDatesScreen
+import com.tpp.app.ui.symptomlog.LogScreen
+import com.tpp.app.ui.viewmodel.AppViewModel
+import com.tpp.app.ui.viewmodel.CalendarViewModel
+import com.tpp.app.ui.viewmodel.OnboardViewModel
 import java.time.LocalDate
 
 enum class Screen {

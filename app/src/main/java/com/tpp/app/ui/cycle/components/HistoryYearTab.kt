@@ -1,4 +1,4 @@
-package com.theperiodpurse.app.ui.cycle.components
+package com.tpp.app.ui.cycle.components
 
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.layout.padding

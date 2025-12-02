@@ -1,4 +1,4 @@
-package com.theperiodpurse.app.ui.setting
+package com.tpp.app.ui.setting
 
 import android.os.Build
 import androidx.annotation.RequiresApi

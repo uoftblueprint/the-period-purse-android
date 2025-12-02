@@ -1,4 +1,4 @@
-package com.theperiodpurse.app.utility.alarm
+package com.tpp.app.utility.alarm
 
 import android.app.AlarmManager
 import android.app.NotificationChannel
@@ -11,7 +11,7 @@ import android.os.Build
 import android.util.Log
 import androidx.annotation.RequiresApi
 import androidx.core.app.NotificationCompat
-import com.theperiodpurse.app.R
+import com.tpp.app.R
 import java.util.*
 
 class MonthlyAlarm : BroadcastReceiver() {

@@ -1,4 +1,4 @@
-package com.theperiodpurse.app.ui.calendar.components
+package com.tpp.app.ui.calendar.components
 
 import androidx.annotation.DrawableRes
 import androidx.compose.foundation.Image
@@ -19,8 +19,8 @@ import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import com.theperiodpurse.app.R
-import com.theperiodpurse.app.ui.onboarding.scaledSp
+import com.tpp.app.R
+import com.tpp.app.ui.onboarding.scaledSp
 import java.time.LocalDate
 
 val greyedOutColor = Color(237, 237, 237)

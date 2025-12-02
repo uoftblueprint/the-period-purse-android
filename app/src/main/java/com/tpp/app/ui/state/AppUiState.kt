@@ -1,7 +1,7 @@
-package com.theperiodpurse.app.ui.state
+package com.tpp.app.ui.state
 
-import com.theperiodpurse.app.data.entity.Date
-import com.theperiodpurse.app.data.model.Symptom
+import com.tpp.app.data.entity.Date
+import com.tpp.app.data.model.Symptom
 
 // data class
 data class AppUiState(

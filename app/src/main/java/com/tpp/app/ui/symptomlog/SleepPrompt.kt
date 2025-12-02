@@ -1,4 +1,4 @@
-package com.theperiodpurse.app.ui.symptomlog
+package com.tpp.app.ui.symptomlog
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.interaction.MutableInteractionSource
@@ -20,11 +20,11 @@ import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.theperiodpurse.app.R
-import com.theperiodpurse.app.data.model.LogPrompt
-import com.theperiodpurse.app.ui.onboarding.EditNumberField
-import com.theperiodpurse.app.ui.viewmodel.AppViewModel
-import com.theperiodpurse.app.ui.viewmodel.LogViewModel
+import com.tpp.app.R
+import com.tpp.app.data.model.LogPrompt
+import com.tpp.app.ui.onboarding.EditNumberField
+import com.tpp.app.ui.viewmodel.AppViewModel
+import com.tpp.app.ui.viewmodel.LogViewModel
 import java.sql.Time
 
 @OptIn(ExperimentalComposeUiApi::class)

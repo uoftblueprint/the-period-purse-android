@@ -1,4 +1,4 @@
-package com.theperiodpurse.app.ui.component
+package com.tpp.app.ui.component
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -15,8 +15,8 @@ import androidx.compose.ui.platform.UriHandler
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import com.theperiodpurse.app.R
-import com.theperiodpurse.app.ui.education.teal
+import com.tpp.app.R
+import com.tpp.app.ui.education.teal
 
 @Composable
 fun SocialMedia(uriHandler: UriHandler) {

@@ -1,12 +1,12 @@
-package com.theperiodpurse.app.data.module
+package com.tpp.app.data.module
 
-import com.theperiodpurse.app.data.DateDAO
-import com.theperiodpurse.app.data.UserDAO
-import com.theperiodpurse.app.data.repository.DateRepository
-import com.theperiodpurse.app.data.repository.UserRepository
-import com.theperiodpurse.app.ui.viewmodel.AppViewModel
-import com.theperiodpurse.app.ui.viewmodel.CalendarViewModel
-import com.theperiodpurse.app.ui.viewmodel.OnboardViewModel
+import com.tpp.app.data.DateDAO
+import com.tpp.app.data.UserDAO
+import com.tpp.app.data.repository.DateRepository
+import com.tpp.app.data.repository.UserRepository
+import com.tpp.app.ui.viewmodel.AppViewModel
+import com.tpp.app.ui.viewmodel.CalendarViewModel
+import com.tpp.app.ui.viewmodel.OnboardViewModel
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

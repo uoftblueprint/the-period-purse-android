@@ -1,12 +1,12 @@
-package com.theperiodpurse.app.ui.calendar
+package com.tpp.app.ui.calendar
 
 import android.os.Build
 import androidx.annotation.RequiresApi
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavController
-import com.theperiodpurse.app.ui.cycle.CycleScreenLayout
-import com.theperiodpurse.app.ui.viewmodel.AppViewModel
-import com.theperiodpurse.app.ui.viewmodel.CalendarViewModel
+import com.tpp.app.ui.cycle.CycleScreenLayout
+import com.tpp.app.ui.viewmodel.AppViewModel
+import com.tpp.app.ui.viewmodel.CalendarViewModel
 
 typealias ComposableNavFun = @Composable (calendarViewModel: CalendarViewModel, navController: NavController, appViewModel: AppViewModel) -> Unit
 

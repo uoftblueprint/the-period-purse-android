@@ -1,8 +1,8 @@
-package com.theperiodpurse.app.data.model
+package com.tpp.app.data.model
 
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
-import com.theperiodpurse.app.R
+import com.tpp.app.R
 
 enum class Symptom(@StringRes val nameId: Int, @DrawableRes val resourceId: Int) {
     MOOD(R.string.mood, R.drawable.sentiment_neutral_black_24dp),

@@ -1,8 +1,8 @@
-package com.theperiodpurse.app.utility
+package com.tpp.app.utility
 
 import android.content.Context
 import android.content.SharedPreferences
-import com.theperiodpurse.app.R
+import com.tpp.app.R
 import java.io.InputStream
 import java.time.LocalDate
 

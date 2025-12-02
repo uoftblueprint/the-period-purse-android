@@ -1,4 +1,4 @@
-package com.theperiodpurse.app
+package com.tpp.app
 
 import androidx.activity.ComponentActivity
 import androidx.annotation.StringRes

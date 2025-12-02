@@ -1,4 +1,4 @@
-package com.theperiodpurse.app
+package com.tpp.app
 
 import androidx.activity.ComponentActivity
 import androidx.compose.ui.platform.LocalContext
@@ -6,9 +6,9 @@ import androidx.compose.ui.test.junit4.createAndroidComposeRule
 import androidx.compose.ui.test.performClick
 import androidx.navigation.compose.ComposeNavigator
 import androidx.navigation.testing.TestNavHostController
-import com.theperiodpurse.app.ui.setting.SettingScreenNavigation
-import com.theperiodpurse.app.ui.setting.SettingsScreen
-import com.theperiodpurse.app.ui.viewmodel.AppViewModel
+import com.tpp.app.ui.setting.SettingScreenNavigation
+import com.tpp.app.ui.setting.SettingsScreen
+import com.tpp.app.ui.viewmodel.AppViewModel
 import dagger.hilt.android.testing.HiltAndroidRule
 import dagger.hilt.android.testing.HiltAndroidTest
 import org.junit.Before

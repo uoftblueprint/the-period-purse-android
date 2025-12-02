@@ -1,4 +1,4 @@
-package com.theperiodpurse.app.ui.legal
+package com.tpp.app.ui.legal
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -9,8 +9,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import com.theperiodpurse.app.ui.onboarding.scaledSp
-import com.theperiodpurse.app.ui.viewmodel.AppViewModel
+import com.tpp.app.ui.onboarding.scaledSp
+import com.tpp.app.ui.viewmodel.AppViewModel
 
 @Composable
 fun Body(str: String, appViewModel: AppViewModel) {

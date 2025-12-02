@@ -1,4 +1,4 @@
-package com.theperiodpurse.app.ui.onboarding
+package com.tpp.app.ui.onboarding
 
 import android.app.Activity
 import android.content.Context
@@ -37,14 +37,14 @@ import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.common.api.ApiException
 import com.google.android.gms.tasks.Task
-import com.theperiodpurse.app.OnboardingScreen
-import com.theperiodpurse.app.R
-import com.theperiodpurse.app.ui.component.handleError
-import com.theperiodpurse.app.ui.legal.TermsAndPrivacyFooter
-import com.theperiodpurse.app.ui.state.OnboardUIState
-import com.theperiodpurse.app.ui.theme.MainFontColor
-import com.theperiodpurse.app.ui.viewmodel.AppViewModel
-import com.theperiodpurse.app.utility.validateUserAuthenticationAndAuthorization
+import com.tpp.app.OnboardingScreen
+import com.tpp.app.R
+import com.tpp.app.ui.component.handleError
+import com.tpp.app.ui.legal.TermsAndPrivacyFooter
+import com.tpp.app.ui.state.OnboardUIState
+import com.tpp.app.ui.theme.MainFontColor
+import com.tpp.app.ui.viewmodel.AppViewModel
+import com.tpp.app.utility.validateUserAuthenticationAndAuthorization
 
 @RequiresApi(Build.VERSION_CODES.O)
 @Composable

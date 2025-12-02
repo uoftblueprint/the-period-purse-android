@@ -1,4 +1,4 @@
-package com.theperiodpurse.app.ui.education
+package com.tpp.app.ui.education
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.fillMaxSize
@@ -11,8 +11,8 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
-import com.theperiodpurse.app.R
-import com.theperiodpurse.app.ui.viewmodel.AppViewModel
+import com.tpp.app.R
+import com.tpp.app.ui.viewmodel.AppViewModel
 
 enum class EducationNavigation {
     Learn, DYK, ProductInfo

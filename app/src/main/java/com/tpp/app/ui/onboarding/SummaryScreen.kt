@@ -1,4 +1,4 @@
-package com.theperiodpurse.app.ui.onboarding
+package com.tpp.app.ui.onboarding
 
 import android.os.Build
 import androidx.annotation.RequiresApi
@@ -17,16 +17,16 @@ import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import com.theperiodpurse.app.R
-import com.theperiodpurse.app.data.*
-import com.theperiodpurse.app.data.entity.Date
-import com.theperiodpurse.app.data.model.FlowSeverity
-import com.theperiodpurse.app.data.model.Symptom
-import com.theperiodpurse.app.ui.state.CalendarDayUIState
-import com.theperiodpurse.app.ui.state.OnboardUIState
-import com.theperiodpurse.app.ui.viewmodel.AppViewModel
-import com.theperiodpurse.app.ui.viewmodel.CalendarViewModel
-import com.theperiodpurse.app.ui.viewmodel.OnboardViewModel
+import com.tpp.app.R
+import com.tpp.app.data.*
+import com.tpp.app.data.entity.Date
+import com.tpp.app.data.model.FlowSeverity
+import com.tpp.app.data.model.Symptom
+import com.tpp.app.ui.state.CalendarDayUIState
+import com.tpp.app.ui.state.OnboardUIState
+import com.tpp.app.ui.viewmodel.AppViewModel
+import com.tpp.app.ui.viewmodel.CalendarViewModel
+import com.tpp.app.ui.viewmodel.OnboardViewModel
 import java.time.LocalDate
 import java.time.ZoneId
 import java.time.format.DateTimeFormatter

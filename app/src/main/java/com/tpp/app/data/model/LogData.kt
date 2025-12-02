@@ -1,4 +1,4 @@
-package com.theperiodpurse.app.data.model
+package com.tpp.app.data.model
 
 import androidx.compose.material.Icon
 import androidx.compose.material.icons.Icons
@@ -7,10 +7,10 @@ import androidx.compose.material.icons.rounded.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
-import com.theperiodpurse.app.R
-import com.theperiodpurse.app.ui.symptomlog.*
-import com.theperiodpurse.app.ui.viewmodel.AppViewModel
-import com.theperiodpurse.app.ui.viewmodel.LogViewModel
+import com.tpp.app.R
+import com.tpp.app.ui.symptomlog.*
+import com.tpp.app.ui.viewmodel.AppViewModel
+import com.tpp.app.ui.viewmodel.LogViewModel
 
 typealias ComposablePromptFun = @Composable (logViewModel: LogViewModel, appViewModel: AppViewModel) -> Unit
 typealias ComposableIconFun = @Composable (color: Color) -> Unit

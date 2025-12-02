@@ -1,4 +1,4 @@
-package com.theperiodpurse.app.ui.cycle.components
+package com.tpp.app.ui.cycle.components
 
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
@@ -17,8 +17,8 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.theperiodpurse.app.R
-import com.theperiodpurse.app.ui.viewmodel.AppViewModel
+import com.tpp.app.R
+import com.tpp.app.ui.viewmodel.AppViewModel
 
 
 @Composable

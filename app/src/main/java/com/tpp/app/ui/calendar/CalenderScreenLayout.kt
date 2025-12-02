@@ -1,4 +1,4 @@
-package com.theperiodpurse.app.ui.calendar
+package com.tpp.app.ui.calendar
 
 import android.os.Build
 import android.util.Log
@@ -18,14 +18,14 @@ import androidx.compose.ui.semantics.semantics
 import androidx.navigation.NavController
 import com.kizitonwose.calendar.compose.rememberCalendarState
 import com.kizitonwose.calendar.core.firstDayOfWeekFromLocale
-import com.theperiodpurse.app.R
-import com.theperiodpurse.app.utility.getPeriodPrediction
-import com.theperiodpurse.app.data.model.FlowSeverity
-import com.theperiodpurse.app.data.model.Symptom
-import com.theperiodpurse.app.ui.calendar.components.SymptomTab
-import com.theperiodpurse.app.ui.state.CalendarDayUIState
-import com.theperiodpurse.app.ui.viewmodel.AppViewModel
-import com.theperiodpurse.app.ui.viewmodel.CalendarViewModel
+import com.tpp.app.R
+import com.tpp.app.utility.getPeriodPrediction
+import com.tpp.app.data.model.FlowSeverity
+import com.tpp.app.data.model.Symptom
+import com.tpp.app.ui.calendar.components.SymptomTab
+import com.tpp.app.ui.state.CalendarDayUIState
+import com.tpp.app.ui.viewmodel.AppViewModel
+import com.tpp.app.ui.viewmodel.CalendarViewModel
 import java.time.YearMonth
 import java.time.ZoneId
 

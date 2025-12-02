@@ -1,9 +1,9 @@
-package com.theperiodpurse.app.ui.viewmodel
+package com.tpp.app.ui.viewmodel
 
 import androidx.lifecycle.ViewModel
-import com.theperiodpurse.app.data.model.*
-import com.theperiodpurse.app.ui.state.CalendarDayUIState
-import com.theperiodpurse.app.ui.state.LogUiState
+import com.tpp.app.data.model.*
+import com.tpp.app.ui.state.CalendarDayUIState
+import com.tpp.app.ui.state.LogUiState
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow

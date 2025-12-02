@@ -1,4 +1,4 @@
-package com.theperiodpurse.app.ui.onboarding
+package com.tpp.app.ui.onboarding
 
 import android.util.Log
 import android.widget.Toast
@@ -7,11 +7,11 @@ import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.platform.LocalContext
 import androidx.navigation.NavHostController
 import com.google.android.gms.auth.api.signin.GoogleSignIn
-import com.theperiodpurse.app.OnboardingScreen
-import com.theperiodpurse.app.ui.component.LoadingScreen
-import com.theperiodpurse.app.ui.viewmodel.AppViewModel
-import com.theperiodpurse.app.ui.viewmodel.OnboardViewModel
-import com.theperiodpurse.app.utility.validateUserAuthenticationAndAuthorization
+import com.tpp.app.OnboardingScreen
+import com.tpp.app.ui.component.LoadingScreen
+import com.tpp.app.ui.viewmodel.AppViewModel
+import com.tpp.app.ui.viewmodel.OnboardViewModel
+import com.tpp.app.utility.validateUserAuthenticationAndAuthorization
 
 @Composable
 fun DownloadBackupFromGoogleDrive(

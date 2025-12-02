@@ -1,12 +1,12 @@
-package com.theperiodpurse.app.data.repository
+package com.tpp.app.data.repository
 
 import android.content.Context
 import androidx.lifecycle.MutableLiveData
 import com.google.gson.Gson
-import com.theperiodpurse.app.data.ApplicationRoomDatabase
-import com.theperiodpurse.app.data.UserDAO
-import com.theperiodpurse.app.data.entity.User
-import com.theperiodpurse.app.data.model.Symptom
+import com.tpp.app.data.ApplicationRoomDatabase
+import com.tpp.app.data.UserDAO
+import com.tpp.app.data.entity.User
+import com.tpp.app.data.model.Symptom
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch

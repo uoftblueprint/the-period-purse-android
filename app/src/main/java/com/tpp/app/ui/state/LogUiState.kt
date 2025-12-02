@@ -1,4 +1,4 @@
-package com.theperiodpurse.app.ui.state
+package com.tpp.app.ui.state
 
 data class LogUiState(
     var selectSquares: LinkedHashMap<Int, Any>,

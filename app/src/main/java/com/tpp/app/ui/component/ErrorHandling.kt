@@ -1,4 +1,4 @@
-package com.theperiodpurse.app.ui.component
+package com.tpp.app.ui.component
 
 import android.content.Context
 import android.widget.Toast

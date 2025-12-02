@@ -1,4 +1,4 @@
-package com.theperiodpurse.app
+package com.tpp.app
 
 import org.junit.Assert.*
 import org.junit.Test

@@ -1,4 +1,4 @@
-package com.theperiodpurse.app.ui.cycle
+package com.tpp.app.ui.cycle
 
 import androidx.compose.foundation.*
 import androidx.compose.foundation.layout.*
@@ -11,16 +11,16 @@ import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import com.theperiodpurse.app.R
-import com.theperiodpurse.app.Screen
-import com.theperiodpurse.app.ui.cycle.components.AverageLengthBox
-import com.theperiodpurse.app.ui.cycle.components.CurrentCycleBox
-import com.theperiodpurse.app.ui.cycle.components.CycleHistoryBox
-import com.theperiodpurse.app.ui.cycle.components.UpcomingPeriodBox
-import com.theperiodpurse.app.ui.viewmodel.AppViewModel
-import com.theperiodpurse.app.utility.calculateAverageCycleLength
-import com.theperiodpurse.app.utility.calculateAveragePeriodLength
-import com.theperiodpurse.app.utility.calculateDaysSinceLastPeriod
+import com.tpp.app.R
+import com.tpp.app.Screen
+import com.tpp.app.ui.cycle.components.AverageLengthBox
+import com.tpp.app.ui.cycle.components.CurrentCycleBox
+import com.tpp.app.ui.cycle.components.CycleHistoryBox
+import com.tpp.app.ui.cycle.components.UpcomingPeriodBox
+import com.tpp.app.ui.viewmodel.AppViewModel
+import com.tpp.app.utility.calculateAverageCycleLength
+import com.tpp.app.utility.calculateAveragePeriodLength
+import com.tpp.app.utility.calculateDaysSinceLastPeriod
 import kotlin.collections.ArrayList
 import kotlin.math.max
 

@@ -1,4 +1,4 @@
-package com.theperiodpurse.app.ui.viewmodel
+package com.tpp.app.ui.viewmodel
 import android.accounts.Account
 import android.content.Context
 import android.util.Log
@@ -12,13 +12,13 @@ import com.google.api.services.drive.Drive
 import com.google.api.services.drive.DriveScopes
 import com.google.api.services.drive.model.File
 import com.google.api.services.drive.model.FileList
-import com.theperiodpurse.app.R
-import com.theperiodpurse.app.data.*
-import com.theperiodpurse.app.data.entity.Date
-import com.theperiodpurse.app.data.entity.User
-import com.theperiodpurse.app.data.model.Symptom
-import com.theperiodpurse.app.data.repository.UserRepository
-import com.theperiodpurse.app.ui.state.OnboardUIState
+import com.tpp.app.R
+import com.tpp.app.data.*
+import com.tpp.app.data.entity.Date
+import com.tpp.app.data.entity.User
+import com.tpp.app.data.model.Symptom
+import com.tpp.app.data.repository.UserRepository
+import com.tpp.app.ui.state.OnboardUIState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.*
 import kotlinx.coroutines.flow.*

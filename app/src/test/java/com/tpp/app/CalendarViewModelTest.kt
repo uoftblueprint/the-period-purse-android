@@ -1,11 +1,11 @@
-package com.theperiodpurse.app
+package com.tpp.app
 
-import com.theperiodpurse.app.data.model.CrampSeverity
-import com.theperiodpurse.app.data.model.Exercise
-import com.theperiodpurse.app.data.model.FlowSeverity
-import com.theperiodpurse.app.data.model.Mood
-import com.theperiodpurse.app.ui.state.CalendarDayUIState
-import com.theperiodpurse.app.ui.viewmodel.CalendarViewModel
+import com.tpp.app.data.model.CrampSeverity
+import com.tpp.app.data.model.Exercise
+import com.tpp.app.data.model.FlowSeverity
+import com.tpp.app.data.model.Mood
+import com.tpp.app.ui.state.CalendarDayUIState
+import com.tpp.app.ui.viewmodel.CalendarViewModel
 import org.junit.Test
 import java.time.LocalDate
 

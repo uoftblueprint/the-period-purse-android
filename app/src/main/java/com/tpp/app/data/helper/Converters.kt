@@ -1,10 +1,10 @@
-package com.theperiodpurse.app.data.helper
+package com.tpp.app.data.helper
 
 import androidx.room.TypeConverter
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
-import com.theperiodpurse.app.data.entity.Date
-import com.theperiodpurse.app.data.model.Symptom
+import com.tpp.app.data.entity.Date
+import com.tpp.app.data.model.Symptom
 import java.time.Duration
 
 class SymptomConverter {

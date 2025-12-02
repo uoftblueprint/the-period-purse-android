@@ -1,7 +1,7 @@
-package com.theperiodpurse.app.ui.state
+package com.tpp.app.ui.state
 
 import android.accounts.Account
-import com.theperiodpurse.app.data.entity.User
+import com.tpp.app.data.entity.User
 import java.time.LocalDate
 
 data class OnboardUIState(

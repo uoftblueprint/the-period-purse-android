@@ -1,4 +1,4 @@
-package com.theperiodpurse.app.ui.setting
+package com.tpp.app.ui.setting
 
 import android.os.Build
 import androidx.annotation.RequiresApi
@@ -16,8 +16,8 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
-import com.theperiodpurse.app.ui.onboarding.scaledSp
-import com.theperiodpurse.app.ui.viewmodel.AppViewModel
+import com.tpp.app.ui.onboarding.scaledSp
+import com.tpp.app.ui.viewmodel.AppViewModel
 
 /**
  * A composable function for the delete account screen.

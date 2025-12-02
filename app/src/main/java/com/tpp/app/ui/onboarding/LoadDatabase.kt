@@ -1,4 +1,4 @@
-package com.theperiodpurse.app.ui.onboarding
+package com.tpp.app.ui.onboarding
 
 import android.content.Context
 import android.os.Build
@@ -9,10 +9,10 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.livedata.observeAsState
 import androidx.navigation.NavHostController
-import com.theperiodpurse.app.Screen
-import com.theperiodpurse.app.ui.component.LoadingScreen
-import com.theperiodpurse.app.ui.viewmodel.AppViewModel
-import com.theperiodpurse.app.ui.viewmodel.CalendarViewModel
+import com.tpp.app.Screen
+import com.tpp.app.ui.component.LoadingScreen
+import com.tpp.app.ui.viewmodel.AppViewModel
+import com.tpp.app.ui.viewmodel.CalendarViewModel
 
 // TODO: add a clean up function for all view models so that they can be re-used if the user
 //  deletes account

@@ -1,4 +1,4 @@
-package com.theperiodpurse.app.ui.symptomlog
+package com.tpp.app.ui.symptomlog
 
 import android.content.Context
 import android.os.Build
@@ -36,18 +36,18 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import com.kizitonwose.calendar.core.atStartOfMonth
-import com.theperiodpurse.app.R
-import com.theperiodpurse.app.Screen
-import com.theperiodpurse.app.data.*
-import com.theperiodpurse.app.data.entity.Date
-import com.theperiodpurse.app.data.model.*
-import com.theperiodpurse.app.ui.component.PopupTopBar
-import com.theperiodpurse.app.ui.onboarding.scaledSp
-import com.theperiodpurse.app.ui.state.CalendarDayUIState
-import com.theperiodpurse.app.ui.theme.SelectedColor1
-import com.theperiodpurse.app.ui.viewmodel.AppViewModel
-import com.theperiodpurse.app.ui.viewmodel.CalendarViewModel
-import com.theperiodpurse.app.ui.viewmodel.LogViewModel
+import com.tpp.app.R
+import com.tpp.app.Screen
+import com.tpp.app.data.*
+import com.tpp.app.data.entity.Date
+import com.tpp.app.data.model.*
+import com.tpp.app.ui.component.PopupTopBar
+import com.tpp.app.ui.onboarding.scaledSp
+import com.tpp.app.ui.state.CalendarDayUIState
+import com.tpp.app.ui.theme.SelectedColor1
+import com.tpp.app.ui.viewmodel.AppViewModel
+import com.tpp.app.ui.viewmodel.CalendarViewModel
+import com.tpp.app.ui.viewmodel.LogViewModel
 import java.sql.Time
 import java.time.*
 import java.time.LocalDate

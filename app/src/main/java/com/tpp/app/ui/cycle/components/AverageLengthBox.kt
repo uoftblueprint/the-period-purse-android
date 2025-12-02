@@ -1,4 +1,4 @@
-package com.theperiodpurse.app.ui.cycle.components
+package com.tpp.app.ui.cycle.components
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -18,9 +18,9 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.theperiodpurse.app.R
-import com.theperiodpurse.app.ui.onboarding.scaledSp
-import com.theperiodpurse.app.ui.theme.DarkColorPaletteImpl
+import com.tpp.app.R
+import com.tpp.app.ui.onboarding.scaledSp
+import com.tpp.app.ui.theme.DarkColorPaletteImpl
 
 @Composable
 fun AverageLengthBox(

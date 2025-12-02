@@ -1,4 +1,4 @@
-package com.theperiodpurse.app.data.model
+package com.tpp.app.data.model
 
 enum class CrampSeverity(val displayName: String) {
     Neutral("Neutral"),

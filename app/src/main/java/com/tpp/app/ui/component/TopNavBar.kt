@@ -1,4 +1,4 @@
-package com.theperiodpurse.app.ui.component
+package com.tpp.app.ui.component
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.interaction.MutableInteractionSource
@@ -18,10 +18,10 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import com.theperiodpurse.app.R
-import com.theperiodpurse.app.ui.onboarding.scaledSp
-import com.theperiodpurse.app.ui.theme.Teal
-import com.theperiodpurse.app.ui.viewmodel.AppViewModel
+import com.tpp.app.R
+import com.tpp.app.ui.onboarding.scaledSp
+import com.tpp.app.ui.theme.Teal
+import com.tpp.app.ui.viewmodel.AppViewModel
 
 @Composable
 fun TopNavBar(

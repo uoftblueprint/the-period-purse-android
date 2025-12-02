@@ -1,4 +1,4 @@
-package com.theperiodpurse.app.ui.cycle.components
+package com.tpp.app.ui.cycle.components
 
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.layout.*
@@ -17,12 +17,12 @@ import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import com.theperiodpurse.app.R
-import com.theperiodpurse.app.utility.calculateArcAngle
-import com.theperiodpurse.app.utility.calculateDaysSinceLastPeriod
-import com.theperiodpurse.app.data.entity.Date
-import com.theperiodpurse.app.ui.onboarding.scaledSp
-import com.theperiodpurse.app.ui.viewmodel.AppViewModel
+import com.tpp.app.R
+import com.tpp.app.utility.calculateArcAngle
+import com.tpp.app.utility.calculateDaysSinceLastPeriod
+import com.tpp.app.data.entity.Date
+import com.tpp.app.ui.onboarding.scaledSp
+import com.tpp.app.ui.viewmodel.AppViewModel
 
 @Composable
 fun CurrentCycleBox(modifier: Modifier = Modifier, dates: ArrayList<Date>, appViewModel: AppViewModel) {

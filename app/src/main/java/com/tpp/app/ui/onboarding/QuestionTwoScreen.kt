@@ -1,4 +1,4 @@
-package com.theperiodpurse.app.ui.onboarding
+package com.tpp.app.ui.onboarding
 
 import android.os.Build
 import androidx.annotation.RequiresApi
@@ -26,11 +26,11 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
-import com.theperiodpurse.app.OnboardingScreen
-import com.theperiodpurse.app.R
-import com.theperiodpurse.app.ui.state.OnboardUIState
-import com.theperiodpurse.app.ui.theme.ButtonDisabledColor
-import com.theperiodpurse.app.ui.theme.Teal
+import com.tpp.app.OnboardingScreen
+import com.tpp.app.R
+import com.tpp.app.ui.state.OnboardUIState
+import com.tpp.app.ui.theme.ButtonDisabledColor
+import com.tpp.app.ui.theme.Teal
 
 @RequiresApi(Build.VERSION_CODES.O)
 @Composable

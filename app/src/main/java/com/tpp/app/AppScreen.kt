@@ -1,4 +1,4 @@
-package com.theperiodpurse.app
+package com.tpp.app
 
 import android.Manifest.permission.POST_NOTIFICATIONS
 import android.app.NotificationChannel
@@ -36,15 +36,15 @@ import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.api.Scope
 import com.google.api.services.drive.DriveScopes
-import com.theperiodpurse.app.ui.component.BottomNavigation
-import com.theperiodpurse.app.ui.component.FloatingActionButton
-import com.theperiodpurse.app.ui.component.LoadingScreen
-import com.theperiodpurse.app.ui.onboarding.*
-import com.theperiodpurse.app.ui.symptomlog.LoggingOptionsPopup
-import com.theperiodpurse.app.ui.theme.ThePeriodPurseTheme
-import com.theperiodpurse.app.ui.viewmodel.AppViewModel
-import com.theperiodpurse.app.ui.viewmodel.CalendarViewModel
-import com.theperiodpurse.app.ui.viewmodel.OnboardViewModel
+import com.tpp.app.ui.component.BottomNavigation
+import com.tpp.app.ui.component.FloatingActionButton
+import com.tpp.app.ui.component.LoadingScreen
+import com.tpp.app.ui.onboarding.*
+import com.tpp.app.ui.symptomlog.LoggingOptionsPopup
+import com.tpp.app.ui.theme.ThePeriodPurseTheme
+import com.tpp.app.ui.viewmodel.AppViewModel
+import com.tpp.app.ui.viewmodel.CalendarViewModel
+import com.tpp.app.ui.viewmodel.OnboardViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import java.time.LocalDate
 

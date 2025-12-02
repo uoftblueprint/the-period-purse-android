@@ -1,4 +1,4 @@
-package com.theperiodpurse.app.ui.calendar.components
+package com.tpp.app.ui.calendar.components
 
 import androidx.compose.material.Tab
 import androidx.compose.material.TabRow
@@ -15,12 +15,12 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.NavController
 import com.google.accompanist.pager.*
-import com.theperiodpurse.app.ui.calendar.CalendarTabItem
-import com.theperiodpurse.app.ui.calendar.noRippleClickable
-import com.theperiodpurse.app.ui.theme.HeaderColor1
-import com.theperiodpurse.app.ui.theme.SelectedColor1
-import com.theperiodpurse.app.ui.viewmodel.AppViewModel
-import com.theperiodpurse.app.ui.viewmodel.CalendarViewModel
+import com.tpp.app.ui.calendar.CalendarTabItem
+import com.tpp.app.ui.calendar.noRippleClickable
+import com.tpp.app.ui.theme.HeaderColor1
+import com.tpp.app.ui.theme.SelectedColor1
+import com.tpp.app.ui.viewmodel.AppViewModel
+import com.tpp.app.ui.viewmodel.CalendarViewModel
 import kotlinx.coroutines.launch
 
 private class NoRippleTheme : RippleTheme {

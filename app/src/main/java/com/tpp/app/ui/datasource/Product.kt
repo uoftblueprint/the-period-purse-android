@@ -1,6 +1,6 @@
-package com.theperiodpurse.app.ui.datasource
+package com.tpp.app.ui.datasource
 
-import com.theperiodpurse.app.R
+import com.tpp.app.R
 
 data class Product(
     val ProductName: String = "",

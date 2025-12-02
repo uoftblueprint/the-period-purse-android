@@ -1,4 +1,4 @@
-package com.theperiodpurse.app.ui.setting
+package com.tpp.app.ui.setting
 
 import android.Manifest
 import android.app.AlarmManager
@@ -30,12 +30,12 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.core.content.ContextCompat
-import com.theperiodpurse.app.R
-import com.theperiodpurse.app.ui.onboarding.scaledSp
-import com.theperiodpurse.app.ui.viewmodel.AppViewModel
-import com.theperiodpurse.app.utility.alarm.Alarm
-import com.theperiodpurse.app.utility.alarm.MonthlyAlarm
-import com.theperiodpurse.app.utility.alarm.WeeklyAlarm
+import com.tpp.app.R
+import com.tpp.app.ui.onboarding.scaledSp
+import com.tpp.app.ui.viewmodel.AppViewModel
+import com.tpp.app.utility.alarm.Alarm
+import com.tpp.app.utility.alarm.MonthlyAlarm
+import com.tpp.app.utility.alarm.WeeklyAlarm
 import com.vanpra.composematerialdialogs.MaterialDialog
 import com.vanpra.composematerialdialogs.MaterialDialogState
 import com.vanpra.composematerialdialogs.datetime.time.timepicker

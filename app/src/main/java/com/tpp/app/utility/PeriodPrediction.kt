@@ -1,7 +1,7 @@
-package com.theperiodpurse.app.utility
+package com.tpp.app.utility
 
-import com.theperiodpurse.app.data.entity.Date as TPPDate
-import com.theperiodpurse.app.data.model.FlowSeverity
+import com.tpp.app.data.entity.Date as TPPDate
+import com.tpp.app.data.model.FlowSeverity
 import java.lang.Float.min
 import java.time.LocalDate
 import java.time.LocalDateTime

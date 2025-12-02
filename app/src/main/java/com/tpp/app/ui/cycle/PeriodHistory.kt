@@ -1,4 +1,4 @@
-package com.theperiodpurse.app.ui.cycle
+package com.tpp.app.ui.cycle
 
 import androidx.compose.foundation.*
 import androidx.compose.foundation.layout.*
@@ -18,14 +18,14 @@ import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import com.theperiodpurse.app.R
-import com.theperiodpurse.app.data.entity.Date
-import com.theperiodpurse.app.utility.findYears
-import com.theperiodpurse.app.utility.parseDatesIntoPeriods
-import com.theperiodpurse.app.ui.cycle.components.PeriodEntries
-import com.theperiodpurse.app.ui.cycle.components.YearTab
-import com.theperiodpurse.app.ui.onboarding.scaledSp
-import com.theperiodpurse.app.ui.viewmodel.AppViewModel
+import com.tpp.app.R
+import com.tpp.app.data.entity.Date
+import com.tpp.app.utility.findYears
+import com.tpp.app.utility.parseDatesIntoPeriods
+import com.tpp.app.ui.cycle.components.PeriodEntries
+import com.tpp.app.ui.cycle.components.YearTab
+import com.tpp.app.ui.onboarding.scaledSp
+import com.tpp.app.ui.viewmodel.AppViewModel
 import java.time.LocalDate
 import kotlin.collections.ArrayList
 

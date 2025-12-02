@@ -1,4 +1,4 @@
-package com.theperiodpurse.app.ui.setting
+package com.tpp.app.ui.setting
 
 import android.app.Activity
 import android.content.Context
@@ -25,10 +25,10 @@ import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.common.api.ApiException
 import com.google.android.gms.common.api.Status
 import com.google.android.gms.tasks.Task
-import com.theperiodpurse.app.ui.onboarding.GoogleSignInButton
-import com.theperiodpurse.app.ui.onboarding.scaledSp
-import com.theperiodpurse.app.ui.viewmodel.AppViewModel
-import com.theperiodpurse.app.utility.validateUserAuthenticationAndAuthorization
+import com.tpp.app.ui.onboarding.GoogleSignInButton
+import com.tpp.app.ui.onboarding.scaledSp
+import com.tpp.app.ui.viewmodel.AppViewModel
+import com.tpp.app.utility.validateUserAuthenticationAndAuthorization
 
 /**
  * Displays the backup account screen.

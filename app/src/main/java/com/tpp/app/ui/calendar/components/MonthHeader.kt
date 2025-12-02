@@ -1,4 +1,4 @@
-package com.theperiodpurse.app.ui.calendar.components
+package com.tpp.app.ui.calendar.components
 
 import android.os.Build
 import androidx.annotation.RequiresApi
@@ -11,9 +11,9 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import com.kizitonwose.calendar.core.CalendarMonth
-import com.theperiodpurse.app.ui.calendar.displayText
-import com.theperiodpurse.app.ui.onboarding.scaledSp
-import com.theperiodpurse.app.ui.viewmodel.AppViewModel
+import com.tpp.app.ui.calendar.displayText
+import com.tpp.app.ui.onboarding.scaledSp
+import com.tpp.app.ui.viewmodel.AppViewModel
 import java.time.DayOfWeek
 import java.time.format.TextStyle
 import java.util.*

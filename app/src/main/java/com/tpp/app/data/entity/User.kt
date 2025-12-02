@@ -1,11 +1,11 @@
-package com.theperiodpurse.app.data.entity
+package com.tpp.app.data.entity
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import androidx.room.TypeConverters
-import com.theperiodpurse.app.data.helper.DateConverter
-import com.theperiodpurse.app.data.helper.SymptomConverter
-import com.theperiodpurse.app.data.model.Symptom
+import com.tpp.app.data.helper.DateConverter
+import com.tpp.app.data.helper.SymptomConverter
+import com.tpp.app.data.model.Symptom
 
 @Entity(tableName = "users")
 data class User(

@@ -1,4 +1,4 @@
-package com.theperiodpurse.app.ui.onboarding
+package com.tpp.app.ui.onboarding
 
 import android.content.Context
 import android.os.Build
@@ -27,14 +27,14 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
-import com.theperiodpurse.app.OnboardingScreen
-import com.theperiodpurse.app.R
-import com.theperiodpurse.app.ui.state.OnboardUIState
-import com.theperiodpurse.app.ui.theme.ButtonDisabledColor
-import com.theperiodpurse.app.ui.theme.DarkColorPaletteImpl
-import com.theperiodpurse.app.ui.theme.Teal
-import com.theperiodpurse.app.ui.viewmodel.AppViewModel
-import com.theperiodpurse.app.ui.viewmodel.OnboardViewModel
+import com.tpp.app.OnboardingScreen
+import com.tpp.app.R
+import com.tpp.app.ui.state.OnboardUIState
+import com.tpp.app.ui.theme.ButtonDisabledColor
+import com.tpp.app.ui.theme.DarkColorPaletteImpl
+import com.tpp.app.ui.theme.Teal
+import com.tpp.app.ui.viewmodel.AppViewModel
+import com.tpp.app.ui.viewmodel.OnboardViewModel
 import java.lang.Appendable
 
 @RequiresApi(Build.VERSION_CODES.O)

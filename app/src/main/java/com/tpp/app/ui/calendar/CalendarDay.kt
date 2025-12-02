@@ -1,15 +1,15 @@
-package com.theperiodpurse.app.ui.calendar
+package com.tpp.app.ui.calendar
 
 import android.os.Build
 import androidx.annotation.RequiresApi
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import com.kizitonwose.calendar.core.CalendarDay
-import com.theperiodpurse.app.data.model.FlowSeverity
-import com.theperiodpurse.app.data.model.Symptom
-import com.theperiodpurse.app.ui.calendar.components.Day
-import com.theperiodpurse.app.ui.state.CalendarDayUIState
-import com.theperiodpurse.app.ui.viewmodel.AppViewModel
+import com.tpp.app.data.model.FlowSeverity
+import com.tpp.app.data.model.Symptom
+import com.tpp.app.ui.calendar.components.Day
+import com.tpp.app.ui.state.CalendarDayUIState
+import com.tpp.app.ui.viewmodel.AppViewModel
 
 // Creates the days
 @RequiresApi(Build.VERSION_CODES.O)

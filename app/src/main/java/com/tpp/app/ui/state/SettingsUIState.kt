@@ -1,6 +1,6 @@
-package com.theperiodpurse.app.ui.state
+package com.tpp.app.ui.state
 
-import com.theperiodpurse.app.data.model.Symptom
+import com.tpp.app.data.model.Symptom
 
 data class SettingsUIState(
 

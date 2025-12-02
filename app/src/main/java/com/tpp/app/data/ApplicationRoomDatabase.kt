@@ -1,4 +1,4 @@
-package com.theperiodpurse.app.data
+package com.tpp.app.data
 
 import android.content.Context
 import android.util.Log
@@ -8,12 +8,12 @@ import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
 import androidx.room.migration.Migration
 import androidx.sqlite.db.SupportSQLiteDatabase
-import com.theperiodpurse.app.data.entity.Date
-import com.theperiodpurse.app.data.entity.User
-import com.theperiodpurse.app.data.helper.DateConverter
-import com.theperiodpurse.app.data.helper.DaysConverter
-import com.theperiodpurse.app.data.helper.DurationConverter
-import com.theperiodpurse.app.data.helper.SymptomConverter
+import com.tpp.app.data.entity.Date
+import com.tpp.app.data.entity.User
+import com.tpp.app.data.helper.DateConverter
+import com.tpp.app.data.helper.DaysConverter
+import com.tpp.app.data.helper.DurationConverter
+import com.tpp.app.data.helper.SymptomConverter
 import java.io.File
 import javax.inject.Singleton
 

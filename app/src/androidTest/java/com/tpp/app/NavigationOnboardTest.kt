@@ -1,4 +1,4 @@
-package com.theperiodpurse.app
+package com.tpp.app
 
 import android.content.Context
 import androidx.activity.ComponentActivity
@@ -7,14 +7,14 @@ import androidx.compose.ui.test.*
 import androidx.compose.ui.test.junit4.createAndroidComposeRule
 import androidx.navigation.compose.ComposeNavigator
 import androidx.navigation.testing.TestNavHostController
-import com.theperiodpurse.app.data.entity.Date
-import com.theperiodpurse.app.data.entity.User
-import com.theperiodpurse.app.data.model.*
-import com.theperiodpurse.app.data.repository.DateRepository
-import com.theperiodpurse.app.data.repository.UserRepository
-import com.theperiodpurse.app.ui.viewmodel.AppViewModel
-import com.theperiodpurse.app.ui.viewmodel.CalendarViewModel
-import com.theperiodpurse.app.ui.viewmodel.OnboardViewModel
+import com.tpp.app.data.entity.Date
+import com.tpp.app.data.entity.User
+import com.tpp.app.data.model.*
+import com.tpp.app.data.repository.DateRepository
+import com.tpp.app.data.repository.UserRepository
+import com.tpp.app.ui.viewmodel.AppViewModel
+import com.tpp.app.ui.viewmodel.CalendarViewModel
+import com.tpp.app.ui.viewmodel.OnboardViewModel
 import dagger.hilt.android.testing.HiltAndroidRule
 import dagger.hilt.android.testing.HiltAndroidTest
 import kotlinx.coroutines.runBlocking

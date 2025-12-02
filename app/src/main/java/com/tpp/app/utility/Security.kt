@@ -1,4 +1,4 @@
-package com.theperiodpurse.app.utility
+package com.tpp.app.utility
 
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.common.api.Scope

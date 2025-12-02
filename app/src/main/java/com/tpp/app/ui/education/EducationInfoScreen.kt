@@ -1,4 +1,4 @@
-package com.theperiodpurse.app.ui.education
+package com.tpp.app.ui.education
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
@@ -18,12 +18,12 @@ import androidx.compose.ui.text.font.FontWeight.Companion.Bold
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
-import com.theperiodpurse.app.R
-import com.theperiodpurse.app.ui.datasource.Product
-import com.theperiodpurse.app.ui.datasource.ProductsList
-import com.theperiodpurse.app.ui.onboarding.scaledSp
-import com.theperiodpurse.app.ui.theme.Teal
-import com.theperiodpurse.app.ui.viewmodel.AppViewModel
+import com.tpp.app.R
+import com.tpp.app.ui.datasource.Product
+import com.tpp.app.ui.datasource.ProductsList
+import com.tpp.app.ui.onboarding.scaledSp
+import com.tpp.app.ui.theme.Teal
+import com.tpp.app.ui.viewmodel.AppViewModel
 
 @Composable
 fun EducationInfoScreen(

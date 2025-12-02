@@ -1,4 +1,4 @@
-package com.theperiodpurse.app.ui.setting
+package com.tpp.app.ui.setting
 
 import android.content.Context
 import android.os.Build
@@ -10,13 +10,13 @@ import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.navigation.NavHostController
-import com.theperiodpurse.app.OnboardingScreen
-import com.theperiodpurse.app.ui.component.LoadingScreen
-import com.theperiodpurse.app.ui.state.AppUiState
-import com.theperiodpurse.app.ui.state.CalendarUIState
-import com.theperiodpurse.app.ui.state.OnboardUIState
-import com.theperiodpurse.app.ui.viewmodel.AppViewModel
-import com.theperiodpurse.app.ui.viewmodel.OnboardViewModel
+import com.tpp.app.OnboardingScreen
+import com.tpp.app.ui.component.LoadingScreen
+import com.tpp.app.ui.state.AppUiState
+import com.tpp.app.ui.state.CalendarUIState
+import com.tpp.app.ui.state.OnboardUIState
+import com.tpp.app.ui.viewmodel.AppViewModel
+import com.tpp.app.ui.viewmodel.OnboardViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 

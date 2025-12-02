@@ -1,4 +1,4 @@
-package com.theperiodpurse.app.ui.calendar.components
+package com.tpp.app.ui.calendar.components
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.interaction.MutableInteractionSource
@@ -24,10 +24,10 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.theperiodpurse.app.R
-import com.theperiodpurse.app.data.model.Symptom
-import com.theperiodpurse.app.ui.calendar.tabModifier
-import com.theperiodpurse.app.ui.viewmodel.AppViewModel
+import com.tpp.app.R
+import com.tpp.app.data.model.Symptom
+import com.tpp.app.ui.calendar.tabModifier
+import com.tpp.app.ui.viewmodel.AppViewModel
 
 @Composable
 fun SymptomTab(

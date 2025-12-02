@@ -1,7 +1,7 @@
-package com.theperiodpurse.app.data
+package com.tpp.app.data
 
 import androidx.room.*
-import com.theperiodpurse.app.data.entity.User
+import com.tpp.app.data.entity.User
 
 @Dao
 interface UserDAO {

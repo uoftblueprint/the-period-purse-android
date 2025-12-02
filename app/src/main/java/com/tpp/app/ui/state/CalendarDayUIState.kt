@@ -1,6 +1,6 @@
-package com.theperiodpurse.app.ui.state
+package com.tpp.app.ui.state
 
-import com.theperiodpurse.app.data.model.*
+import com.tpp.app.data.model.*
 import java.time.LocalTime
 import java.time.format.DateTimeFormatter
 

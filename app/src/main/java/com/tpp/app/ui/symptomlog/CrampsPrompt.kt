@@ -1,4 +1,4 @@
-package com.theperiodpurse.app.ui.symptomlog
+package com.tpp.app.ui.symptomlog
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
@@ -10,10 +10,10 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.theperiodpurse.app.data.model.LogPrompt
-import com.theperiodpurse.app.data.model.LogSquare
-import com.theperiodpurse.app.ui.viewmodel.AppViewModel
-import com.theperiodpurse.app.ui.viewmodel.LogViewModel
+import com.tpp.app.data.model.LogPrompt
+import com.tpp.app.data.model.LogSquare
+import com.tpp.app.ui.viewmodel.AppViewModel
+import com.tpp.app.ui.viewmodel.LogViewModel
 import java.lang.Appendable
 
 @Composable

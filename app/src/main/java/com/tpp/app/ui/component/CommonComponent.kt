@@ -1,4 +1,4 @@
-package com.theperiodpurse.app.ui.component
+package com.tpp.app.ui.component
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -16,11 +16,11 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import androidx.navigation.NavHostController
-import com.theperiodpurse.app.R
-import com.theperiodpurse.app.Screen
-import com.theperiodpurse.app.ui.theme.Red
-import com.theperiodpurse.app.ui.theme.Teal
-import com.theperiodpurse.app.ui.viewmodel.AppViewModel
+import com.tpp.app.R
+import com.tpp.app.Screen
+import com.tpp.app.ui.theme.Red
+import com.tpp.app.ui.theme.Teal
+import com.tpp.app.ui.viewmodel.AppViewModel
 
 @Composable
 fun BottomNavigation(

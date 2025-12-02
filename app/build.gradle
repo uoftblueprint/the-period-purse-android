@@ -8,18 +8,25 @@ plugins {
     id("com.google.firebase.crashlytics")
 }
 
+// Load keystore properties
+def keystorePropertiesFile = rootProject.file("keystore.properties")
+def keystoreProperties = new Properties()
+if (keystorePropertiesFile.exists()) {
+    keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+}
+
 android {
-    namespace 'com.tpp.theperiodpurse'
+    namespace 'com.tpp.app'
     compileSdk 33
 
 
     defaultConfig {
-        applicationId "com.tpp.theperiodpurse"
+        applicationId "com.tpp.app"
         minSdk 21
         targetSdk 33
         versionCode 11
         versionName "2.4.0"
-        testInstrumentationRunner "com.tpp.theperiodpurse.CustomTestRunner"
+        testInstrumentationRunner "com.tpp.app.CustomTestRunner"
 
         vectorDrawables {
             useSupportLibrary true
@@ -31,11 +38,22 @@ android {
         }
     }
 
+    signingConfigs {
+        release {
+            if (keystorePropertiesFile.exists()) {
+                keyAlias keystoreProperties['keyAlias']
+                keyPassword keystoreProperties['keyPassword']
+                storeFile rootProject.file(keystoreProperties['storeFile'])
+                storePassword keystoreProperties['storePassword']
+            }
+        }
+    }
 
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
         }
     }
     lintOptions {

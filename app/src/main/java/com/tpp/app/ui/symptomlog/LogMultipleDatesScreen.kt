@@ -1,4 +1,4 @@
-package com.theperiodpurse.app.ui.symptomlog
+package com.tpp.app.ui.symptomlog
 
 import android.os.Build
 import androidx.annotation.RequiresApi
@@ -26,18 +26,18 @@ import com.kizitonwose.calendar.compose.VerticalCalendar
 import com.kizitonwose.calendar.compose.rememberCalendarState
 import com.kizitonwose.calendar.core.DayPosition
 import com.kizitonwose.calendar.core.firstDayOfWeekFromLocale
-import com.theperiodpurse.app.R
-import com.theperiodpurse.app.data.entity.Date
-import com.theperiodpurse.app.data.model.FlowSeverity
-import com.theperiodpurse.app.ui.calendar.components.Day
-import com.theperiodpurse.app.ui.calendar.components.MonthHeader
-import com.theperiodpurse.app.ui.component.PopupTopBar
-import com.theperiodpurse.app.ui.onboarding.scaledSp
-import com.theperiodpurse.app.ui.state.CalendarDayUIState
-import com.theperiodpurse.app.ui.theme.Red
-import com.theperiodpurse.app.ui.theme.SelectedColor1
-import com.theperiodpurse.app.ui.viewmodel.AppViewModel
-import com.theperiodpurse.app.ui.viewmodel.CalendarViewModel
+import com.tpp.app.R
+import com.tpp.app.data.entity.Date
+import com.tpp.app.data.model.FlowSeverity
+import com.tpp.app.ui.calendar.components.Day
+import com.tpp.app.ui.calendar.components.MonthHeader
+import com.tpp.app.ui.component.PopupTopBar
+import com.tpp.app.ui.onboarding.scaledSp
+import com.tpp.app.ui.state.CalendarDayUIState
+import com.tpp.app.ui.theme.Red
+import com.tpp.app.ui.theme.SelectedColor1
+import com.tpp.app.ui.viewmodel.AppViewModel
+import com.tpp.app.ui.viewmodel.CalendarViewModel
 import java.time.LocalDate
 import java.time.YearMonth
 import java.time.ZoneId

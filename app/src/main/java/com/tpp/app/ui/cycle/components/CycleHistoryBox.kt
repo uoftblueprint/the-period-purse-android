@@ -1,4 +1,4 @@
-package com.theperiodpurse.app.ui.cycle.components
+package com.tpp.app.ui.cycle.components
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
@@ -15,12 +15,12 @@ import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import com.theperiodpurse.app.R
-import com.theperiodpurse.app.data.entity.Date
-import com.theperiodpurse.app.utility.parseDatesIntoPeriods
-import com.theperiodpurse.app.ui.education.teal
-import com.theperiodpurse.app.ui.onboarding.scaledSp
-import com.theperiodpurse.app.ui.viewmodel.AppViewModel
+import com.tpp.app.R
+import com.tpp.app.data.entity.Date
+import com.tpp.app.utility.parseDatesIntoPeriods
+import com.tpp.app.ui.education.teal
+import com.tpp.app.ui.onboarding.scaledSp
+import com.tpp.app.ui.viewmodel.AppViewModel
 
 @Composable
 fun CycleHistoryBox(

@@ -1,4 +1,4 @@
-package com.theperiodpurse.app.data.model
+package com.tpp.app.data.model
 
 enum class Sleep {
     Little,
