@@ -1,44 +1,26 @@
 {
   "project_info": {
-    "project_number": "941432711682",
-    "project_id": "menstruation-nation-382503",
-    "storage_bucket": "menstruation-nation-382503.appspot.com"
+    "project_number": "741032515642",
+    "project_id": "tpp-mnation",
+    "storage_bucket": "tpp-mnation.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:941432711682:android:c987af18ea56ebfcd8151b",
+        "mobilesdk_app_id": "1:741032515642:android:f600dacac38bac307dfd03",
         "android_client_info": {
           "package_name": "com.tpp.app"
         }
       },
-      "oauth_client": [
-        {
-          "client_id": "941432711682-e648chv0m2h1ibt3rfp36fpco67lebi4.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.tpp.app",
-            "certificate_hash": "9530ca5d378bc848254e8ff14511ffe6f91b5bd3"
-          }
-        },
-        {
-          "client_id": "941432711682-q1edmoah7qan023krcvitfch5sp1uhqi.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
+      "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyCscv98ohFXfB0fMiJZazhb4jw2DkBtE78"
+          "current_key": "AIzaSyAy99lzf8wgMoP7tW7etg_vYf7iS3Fpi7I"
         }
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "941432711682-q1edmoah7qan023krcvitfch5sp1uhqi.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
+          "other_platform_oauth_client": []
         }
       }
     }
